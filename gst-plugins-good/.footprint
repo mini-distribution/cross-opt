@@ -45,6 +45,8 @@ drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstinterleave.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstisomp4.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstisomp4.so
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstjpeg.la
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstjpeg.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstlevel.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstlevel.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmatroska.la
@@ -57,6 +59,8 @@ drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmultipart.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstnavigationtest.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstnavigationtest.so
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstpng.la
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstpng.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstreplaygain.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstreplaygain.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstrtp.la

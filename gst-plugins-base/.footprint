@@ -88,6 +88,8 @@ drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstadder.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstadder.so
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstalsa.la
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstalsa.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstapp.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstapp.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstaudioconvert.la
