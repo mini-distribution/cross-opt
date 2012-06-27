@@ -7,8 +7,8 @@ release=1
 source=(http://heanet.dl.sourceforge.net/project/$name/$name/$name-$version/$name-$version.tar.gz)
 
 build() {
-  cd $name-$version
+   cd $name-$version
 
-  make CROSS="$HOST-" LDFLAGS="-L../libsupp -s"
-  make DESTDIR=$PKG prefix=/usr mandir=/usr/share/man install
+   make CROSS="$HOST-" LDFLAGS="-L../libsupp -s"
+   make DESTDIR=$PKG prefix=/usr mandir=/usr/share/man install
 }

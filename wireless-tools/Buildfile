@@ -7,8 +7,8 @@ release=1
 source=(http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/${name/-/_}.$version.tar.gz)
 
 build() {
-  cd ${name/-/_}.$version
+   cd ${name/-/_}.$version
 
-  make CC="$HOST-gcc"
-  make PREFIX=$PKG/usr INSTALL_MAN=$PKG/usr/share/man install
+   make CC="$HOST-gcc"
+   make PREFIX=$PKG/usr INSTALL_MAN=$PKG/usr/share/man install
 }

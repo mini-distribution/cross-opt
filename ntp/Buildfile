@@ -5,19 +5,19 @@ name=ntp
 version=4.2.6p5
 release=1
 source=(http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/$name-$version.tar.gz)
-depends=cross/openssl
+depends=openssl
 
 build () {
-  cd $name-$version
-  ./configure --build=$BUILD \
-              --host=$HOST \
-              --prefix=/usr \
-              --with-sntp \
-              --with-crypto \
-              --enable-debugging=no \
-              --enable-ntpdate-step \
-              --enable-parse-clocks \
-              --enable-all-clocks
-  make
-  make DESTDIR=$PKG install
+   cd $name-$version
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --with-sntp \
+               --with-crypto \
+               --enable-debugging=no \
+               --enable-ntpdate-step \
+               --enable-parse-clocks \
+               --enable-all-clocks
+   make
+   make DESTDIR=$PKG install
 }
