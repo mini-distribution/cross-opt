@@ -19,7 +19,7 @@ build() {
                --disable-nls \
                --cache-file=config.cache
   
-   make
+   make -j $JOBS
    make DESTDIR=$PKG install
 
    rm -f $PKG/usr/bin/pstree.x11

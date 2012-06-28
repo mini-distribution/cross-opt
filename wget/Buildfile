@@ -19,7 +19,7 @@ build() {
                --disable-debug \
                --disable-nls
 
-   make
+   make -j $JOBS
    make DESTDIR=$PKG install
    install -D -m 0644 $SRC/wgetrc $PKG/etc/wgetrc
 

@@ -18,6 +18,6 @@ build () {
                --enable-ntpdate-step \
                --enable-parse-clocks \
                --enable-all-clocks
-   make
+   make -j $JOBS
    make DESTDIR=$PKG install
 }

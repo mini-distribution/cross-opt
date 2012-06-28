@@ -16,7 +16,7 @@ build() {
                --prefix=/usr \
                --with-regex=pcre
 
-   make
+   make -j $JOBS
    make DESTDIR=$PKG install
    install -m 755 -D $SRC/filter $PKG/usr/lib/less/filter
 }

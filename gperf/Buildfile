@@ -11,7 +11,7 @@ build() {
    ./configure --prefix=/usr --mandir=/usr/man \
                --build=$BUILD \
                --host=$HOST
-   make
+   make -j $JOBS
    make DESTDIR=$PKG install
    rm -r $PKG/usr/share
 }
