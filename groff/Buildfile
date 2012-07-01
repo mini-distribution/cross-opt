@@ -29,3 +29,8 @@ build() {
    ln -sf tbl $PKG/usr/bin/gtbl
    ln -sf soelim $PKG/usr/bin/zsoelim
 }
+
+check() {
+   # Test for preinstalled grn tool
+   type grn
+}
