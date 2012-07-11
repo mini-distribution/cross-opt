@@ -5,7 +5,7 @@ name=gst-plugins-good
 version=0.11.91
 release=1
 source=(http://gstreamer.freedesktop.org/src/gst-plugins-good/$name-$version.tar.xz)
-depends=(glib gstreamer gst-plugins-base)
+depends=(gstreamer gst-plugins-base libpng libjpeg)
 
 build() {
    cd $name-$version
