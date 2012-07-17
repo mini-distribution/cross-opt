@@ -16,6 +16,6 @@ build() {
                --with-zlib \
                --disable-nls
 
-   make
+   make -j $JOBS
    make DESTDIR=$PKG install
 }
