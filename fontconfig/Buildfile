@@ -1,0 +1,33 @@
+# Description: A library for configuring and customizing font access
+# URL: http://fontconfig.org
+
+name=fontconfig
+version=2.10.0
+release=1
+source=(http://fontconfig.org/release/$name-$version.tar.gz)
+depends=(freetype expat)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --sysconfdir=/etc \
+               --localstatedir=/var
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Enabling autohinting by default
+   pushd $PKG/etc/fonts/conf.d
+   ln -s ../../../usr/share/fontconfig/conf.avail/10-autohint.conf
+   popd
+
+   rm $PKG/etc/fonts/conf.d/README
+   rm -r $PKG/usr/share/doc
+
+   # Fix .la files
+   find $PKG -name "*.la" -exec sed -i -e "/dependency_libs/s; /usr; $SYSROOT/usr;g" {} \; \
+                          -exec sed -i -e "/libdir/s;'/usr;'$SYSROOT/usr;g" {} \;
+}
