@@ -13,8 +13,7 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
-               --with-zlib \
-               --disable-nls
+               --with-zlib
 
    make -j $JOBS
    make DESTDIR=$PKG install

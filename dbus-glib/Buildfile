@@ -1,0 +1,34 @@
+# Description: D-Bus GLib bindings
+# URL: http://www.freedesktop.org/wiki/Software/DBusBindings/
+
+name=dbus-glib
+version=0.100
+release=1
+source=(http://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz)
+depends=(dbus glib expat)
+
+build() {
+   cd $name-$version
+
+   echo "ac_cv_have_abstract_sockets=yes" >> config.cache
+
+  ./configure --build=$BUILD \
+              --host=$HOST \
+              --prefix=/usr \
+              --disable-static \
+              --with-xml=expat \
+              --disable-tests \
+              --cache-file=config.cache
+
+   sed -i 's|SUBDIRS = . examples|SUBDIRS = .|g' dbus/Makefile
+   sed -i 's|SUBDIRS = dbus tools test doc|SUBDIRS = dbus|g' Makefile
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/usr/{etc,libexec}
+
+   # Fix .la files
+   find $PKG -name "*.la" -exec sed -i -e "/dependency_libs/s; /usr; $SYSROOT/usr;g" {} \; \
+                          -exec sed -i -e "/libdir/s;'/usr;'$SYSROOT/usr;g" {} \;
+}

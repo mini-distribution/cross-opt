@@ -1,0 +1,26 @@
+# Description: TIFF Library and Utilities
+# URL: http://www.libtiff.org/
+
+name=libtiff
+version=4.0.2
+release=1
+source=(ftp://ftp.remotesensing.org/pub/libtiff/tiff-$version.tar.gz)
+depends=(zlib libjpeg)
+
+build() {
+   cd tiff-$version
+
+   ./configure --prefix=/usr \
+               --build=$BUILD \
+               --host=$HOST
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share/doc
+
+   # Fix .la files
+   find $PKG -name "*.la" -exec sed -i -e "/dependency_libs/s; /usr; $SYSROOT/usr;g" {} \; \
+                          -exec sed -i -e "/libdir/s;'/usr;'$SYSROOT/usr;g" {} \;
+}
+
