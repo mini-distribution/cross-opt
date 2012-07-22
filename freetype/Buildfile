@@ -17,4 +17,7 @@ build() {
 
    make -j $JOBS
    make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
 }
