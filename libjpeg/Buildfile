@@ -7,7 +7,7 @@ release=1
 source=(http://www.ijg.org/files/jpegsrc.v$version.tar.gz)
 
 build() {
-   cd jpeg-8d
+   cd jpeg-$version
 
    ./configure --prefix=/usr \
                --build=$BUILD \
@@ -16,7 +16,6 @@ build() {
    make -j $JOBS
    make DESTDIR=$PKG install
 
-   # Fix .la files
-   find $PKG -name "*.la" -exec sed -i -e "/dependency_libs/s; /usr; $SYSROOT/usr;g" {} \;
-   find $PKG -name "*.la" -exec sed -i -e "/libdir/s;'/usr;'$SYSROOT/usr;g" {} \;
+   # Fix libtool files
+   fix_la_files $PKG
 }
