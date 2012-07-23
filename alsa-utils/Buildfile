@@ -5,7 +5,7 @@ name=alsa-utils
 version=1.0.24.2
 release=1
 source=(ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2)
-depends=(alsa-lib dialog)
+depends=(alsa-lib dialog systemd)
 
 build() {
    cd $name-$version

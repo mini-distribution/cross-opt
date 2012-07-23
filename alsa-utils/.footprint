@@ -18,6 +18,15 @@ lrwxrwxrwx	root/root	usr/bin/arecord
 -rwxr-xr-x	root/root	usr/bin/aseqnet
 -rwxr-xr-x	root/root	usr/bin/iecset
 -rwxr-xr-x	root/root	usr/bin/speaker-test
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/lib/systemd/
+drwxr-xr-x	root/root	usr/lib/systemd/system/
+-rw-r--r--	root/root	usr/lib/systemd/system/alsa-restore.service
+-rw-r--r--	root/root	usr/lib/systemd/system/alsa-store.service
+drwxr-xr-x	root/root	usr/lib/systemd/system/basic.target.wants/
+lrwxrwxrwx	root/root	usr/lib/systemd/system/basic.target.wants/alsa-restore.service
+drwxr-xr-x	root/root	usr/lib/systemd/system/shutdown.target.wants/
+lrwxrwxrwx	root/root	usr/lib/systemd/system/shutdown.target.wants/alsa-store.service
 drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/alsaconf
 -rwxr-xr-x	root/root	usr/sbin/alsactl
