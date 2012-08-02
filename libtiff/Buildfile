@@ -10,9 +10,9 @@ depends=(zlib libjpeg)
 build() {
    cd tiff-$version
 
-   ./configure --prefix=/usr \
-               --build=$BUILD \
-               --host=$HOST
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
 
    make -j $JOBS
    make DESTDIR=$PKG install

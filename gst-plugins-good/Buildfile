@@ -10,9 +10,9 @@ depends=(gstreamer gst-plugins-base libpng libjpeg)
 build() {
    cd $name-$version
 
-   ./configure --prefix=/usr \
-               --build=$BUILD \
+   ./configure --build=$BUILD \
                --host=$HOST \
+               --prefix=/usr \
                --disable-oss4 \
                --disable-oss \
                --disable-gst_v4l2

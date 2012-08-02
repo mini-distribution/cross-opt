@@ -9,9 +9,9 @@ source=(http://www.infradead.org/~tgr/libnl/files/$name-$version.tar.gz)
 build() {
    cd $name-$version
 
-   ./configure --prefix=/usr \
-               --build=$BUILD \
+   ./configure --build=$BUILD \
                --host=$HOST \
+               --prefix=/usr \
                --disable-nls
 
    make -j $JOBS
