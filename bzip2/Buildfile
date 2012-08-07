@@ -1,0 +1,21 @@
+# Description: Very high-quality data compression program
+# URL: http://www.bzip.org/
+
+name=bzip2
+version=1.0.6
+release=1
+source=(http://www.bzip.org/$version/$name-$version.tar.gz
+        $name.patch $name-disable-test.patch)
+
+build() {
+  cd $name-$version
+
+  patch -p1 < $SRC/$name.patch
+  patch -p0 < $SRC/$name-disable-test.patch
+
+  make CC=$HOST-gcc AR=$HOST-ar RANLIB=$HOST-ranlib
+  make PREFIX=$PKG/usr install
+
+  make -f Makefile-libbz2_so CC=$HOST-gcc AR=$HOST-ar RANLIB=$HOST-ranlib
+  make -f Makefile-libbz2_so PREFIX=$PKG/usr install
+}
