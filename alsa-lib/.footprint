@@ -62,6 +62,8 @@ drwxr-xr-x	root/root	usr/share/aclocal/
 -rw-r--r--	root/root	usr/share/aclocal/alsa.m4
 drwxr-xr-x	root/root	usr/share/alsa/
 -rw-r--r--	root/root	usr/share/alsa/alsa.conf
+drwxr-xr-x	root/root	usr/share/alsa/alsa.conf.d/
+-rw-r--r--	root/root	usr/share/alsa/alsa.conf.d/README
 drwxr-xr-x	root/root	usr/share/alsa/cards/
 -rw-r--r--	root/root	usr/share/alsa/cards/AACI.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/aliases.alisp
@@ -88,7 +90,9 @@ drwxr-xr-x	root/root	usr/share/alsa/cards/
 -rw-r--r--	root/root	usr/share/alsa/cards/ENS1370.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/ENS1371.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/ES1968.conf
+-rw-r--r--	root/root	usr/share/alsa/cards/FireWave.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/FM801.conf
+-rw-r--r--	root/root	usr/share/alsa/cards/FWSpeakers.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/GUS.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/HDA-Intel.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/ICE1712.conf

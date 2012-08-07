@@ -1,7 +1,3 @@
-drwxr-xr-x	root/root	lib/
-drwxr-xr-x	root/root	lib/udev/
-drwxr-xr-x	root/root	lib/udev/rules.d/
--rw-r--r--	root/root	lib/udev/rules.d/90-alsa-restore.rules
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/aconnect
@@ -27,8 +23,10 @@ drwxr-xr-x	root/root	usr/lib/systemd/system/basic.target.wants/
 lrwxrwxrwx	root/root	usr/lib/systemd/system/basic.target.wants/alsa-restore.service
 drwxr-xr-x	root/root	usr/lib/systemd/system/shutdown.target.wants/
 lrwxrwxrwx	root/root	usr/lib/systemd/system/shutdown.target.wants/alsa-store.service
+drwxr-xr-x	root/root	usr/lib/udev/
+drwxr-xr-x	root/root	usr/lib/udev/rules.d/
+-rw-r--r--	root/root	usr/lib/udev/rules.d/90-alsa-restore.rules
 drwxr-xr-x	root/root	usr/sbin/
--rwxr-xr-x	root/root	usr/sbin/alsaconf
 -rwxr-xr-x	root/root	usr/sbin/alsactl
 drwxr-xr-x	root/root	usr/share/
 drwxr-xr-x	root/root	usr/share/alsa/
@@ -57,8 +55,6 @@ lrwxrwxrwx	root/root	usr/share/man/man1/arecord.1
 -rw-r--r--	root/root	usr/share/man/man1/aseqnet.1
 -rw-r--r--	root/root	usr/share/man/man1/iecset.1
 -rw-r--r--	root/root	usr/share/man/man1/speaker-test.1
-drwxr-xr-x	root/root	usr/share/man/man8/
--rw-r--r--	root/root	usr/share/man/man8/alsaconf.8
 drwxr-xr-x	root/root	usr/share/sounds/
 drwxr-xr-x	root/root	usr/share/sounds/alsa/
 -rw-r--r--	root/root	usr/share/sounds/alsa/Front_Center.wav

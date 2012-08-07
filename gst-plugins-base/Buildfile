@@ -10,9 +10,9 @@ depends=(gstreamer alsa-lib)
 build() {
    cd $name-$version
 
-   ./configure --prefix=/usr \
-               --build=$BUILD \
+   ./configure --build=$BUILD \
                --host=$HOST \
+               --prefix=/usr \
                --disable-ogg \
                --disable-vorbis
 
