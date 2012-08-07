@@ -1,0 +1,29 @@
+# Description: Berkeley DB
+# URL: http://www.oracle.com/database/berkeley-db/index.html
+
+name=db
+version=4.8.30
+release=1
+source=(http://download.oracle.com/berkeley-db/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version/build_unix
+
+  LDFLAGS="-lpthread" \
+  ../dist/configure --build=$BUILD \
+                    --host=$HOST \
+                    --prefix=/usr \
+                    --enable-compat185 \
+                    --enable-shared \
+                    --enable-static \
+                    --enable-cxx
+
+  make -j $JOBS
+  make DESTDIR=$PKG install
+
+  rm -r $PKG/usr/docs
+  chmod -R +w $PKG
+
+  # Fix libtool files
+  fix_la_files $PKG
+}
