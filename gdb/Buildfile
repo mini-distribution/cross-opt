@@ -2,7 +2,7 @@
 # URL: http://sources.redhat.com/gdb/
 
 name=gdb
-version=7.5
+version=7.4.1
 release=1
 source=(ftp://ftp.gnu.org/gnu/$name/$name-$version.tar.bz2)
 depends=ncurses
