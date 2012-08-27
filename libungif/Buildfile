@@ -1,0 +1,21 @@
+# Description: An uncompressed GIF library compatible with giflib
+# URL: http://libungif.sourceforge.net/doc/
+
+name=libungif
+version=4.1.4
+release=1
+source=(http://switch.dl.sourceforge.net/project/giflib/$name-4.x/$name-4.1.4/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make prefix=$PKG/usr install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
