@@ -1,0 +1,23 @@
+# Description: A Linux kernel packet filter control tool
+# URL: http://www.iptables.org/
+
+name=iptables
+version=1.4.15
+release=1
+source=(http://www.hu.netfilter.org/projects/iptables/files/$name-$version.tar.bz2)
+
+build () {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --libexecdir=/usr/lib \
+               --enable-libipq
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
