@@ -1,0 +1,24 @@
+# Description: A low-level cryptographic library
+# URL: http://www.lysator.liu.se/~nisse/nettle
+
+name=nettle
+version=2.5
+release=1
+source=(http://www.lysator.liu.se/~nisse/archive/$name-$version.tar.gz)
+depends=(gmp)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
