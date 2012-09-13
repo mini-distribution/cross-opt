@@ -1,0 +1,26 @@
+# Description: A library that provides a secure layer over a reliable transport layer
+# URL: http://www.gnu.org/software/gnutls/
+
+name=gnutls
+version=3.1.1
+release=1
+source=(http://ftp.gnu.org/gnu/gnutls/$name-$version.tar.xz)
+depends=(nettle)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-guile \
+               --disable-nls
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/usr/share/{info,locale}
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
