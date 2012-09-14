@@ -4,7 +4,8 @@
 name=connman
 version=1.6
 release=1
-source=(http://www.kernel.org/pub/linux/network/$name/$name-$version.tar.xz)
+source=(http://www.kernel.org/pub/linux/network/$name/$name-$version.tar.xz
+        connman.service)
 depends=(glib dbus iptables gnutls)
 
 build() {
@@ -38,6 +39,8 @@ build() {
    make -j $JOBS
    make DESTDIR=$PKG install
 
+   install -d $PKG/etc/systemd/system
+   cp $SRC/connman.service $PKG/etc/systemd/system
+
    # FIXME: Add systemd init script
-   rm -r $PKG/etc
 }
