@@ -1,5 +1,5 @@
 [Unit]
-Description=Connection service
+Description=Connection Manager Service
 Wants=network.target
 Before=network.target
 
