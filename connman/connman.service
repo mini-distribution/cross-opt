@@ -7,6 +7,8 @@ Before=network.target
 Type=dbus
 BusName=net.connman
 ExecStart=/usr/sbin/connmand -n
+Restart=always
+RestartSec=0
 
 [Install]
 WantedBy=multi-user.target
