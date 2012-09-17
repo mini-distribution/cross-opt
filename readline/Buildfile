@@ -6,6 +6,7 @@ version=6.2
 release=1
 source=(http://ftp.gnu.org/gnu/$name/$name-$version.tar.gz \
         readline62-001 readline62-002 inputrc)
+depends=(ncurses)
 
 build() {
    cd $name-$version
@@ -19,7 +20,8 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
-               --mandir=/usr/man
+               --with-curses
+
    make -j $JOBS SHLIB_LIBS=-lncurses
    make DESTDIR=$PKG install
 
