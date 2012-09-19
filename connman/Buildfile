@@ -2,9 +2,9 @@
 # URL: http://connman.net/
 
 name=connman
-version=git-bf87298c
+version=1.7
 release=1
-source=(http://buildgear.org/mirror/$name-$version.tar.xz
+source=(http://www.kernel.org/pub/linux/network/connman/$name-$version.tar.xz
         connman.service)
 depends=(glib dbus iptables gnutls readline wpa_supplicant)
 

@@ -26,13 +26,8 @@ drwxr-xr-x	root/root	usr/include/connman/
 -rw-r--r--	root/root	usr/include/connman/version.h
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/connman/
-drwxr-xr-x	root/root	usr/lib/connman/plugins/
 drwxr-xr-x	root/root	usr/lib/connman/scripts/
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/connman.pc
 drwxr-xr-x	root/root	usr/sbin/
 -rwxr-xr-x	root/root	usr/sbin/connmand
-drwxr-xr-x	root/root	usr/share/
-drwxr-xr-x	root/root	usr/share/man/
-drwxr-xr-x	root/root	usr/share/man/man1/
--rw-r--r--	root/root	usr/share/man/man1/connmanctl.1
