@@ -1,0 +1,50 @@
+# Description: Highly configurable text editor
+# URL:         http://www.vim.org/
+
+name=vim
+version=7.3
+release=1
+source=(ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2
+        vim_uint32t.patch)
+depends=(ncurses acl)
+
+build () {
+    cd vim73/src
+
+    patch -p2 < $SRC/vim_uint32t.patch
+
+    vim_cv_toupper_broken=no \
+    vim_cv_terminfo=yes \
+    vim_cv_tty_group=world \
+    vim_cv_getcwd_broken=no \
+    vim_cv_stat_ignores_slash=yes \
+    vim_cv_memmove_handles_overlap=yes \
+    ac_cv_prog_STRIP=$HOST-strip \
+    ./configure --build=$BUILD \
+        --host=$HOST \
+        --prefix=/usr \
+        --mandir=/usr/man \
+        --with-vim-name=vim \
+        --without-x \
+        --disable-gui \
+        --enable-multibyte \
+        --disable-gpm \
+        --disable-nls \
+        --with-tlib=ncurses \
+
+    make -j$JOBS VIMRTDIR= 
+    make VIMRTDIR= DESTDIR=$PKG installvimbin installruntime installlinks
+
+    mv $PKG/usr/share/vim/vimrc_example.vim $PKG/usr/share/vim/vimrc
+    rm -r $PKG/usr/{man/man?/vimtutor*,share/vim/{tutor,macros}}
+    rm $PKG/usr/share/vim/*/README.txt
+    ln -sf vim $PKG/usr/bin/evim
+    ln -sf /bin/vi $PKG/usr/bin/vi
+    ln -sf vim.1.gz $PKG/usr/man/man1/ex.1.gz
+    ln -sf vim.1.gz $PKG/usr/man/man1/vi.1.gz
+    ln -sf vim.1.gz $PKG/usr/man/man1/rvim.1.gz
+    ln -sf vim.1.gz $PKG/usr/man/man1/view.1.gz
+    ln -sf vim.1.gz $PKG/usr/man/man1/rview.1.gz
+    ln -sf vim.1.gz $PKG/usr/man/man1/gvim.1.gz
+
+}
