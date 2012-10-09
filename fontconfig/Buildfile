@@ -2,7 +2,7 @@
 # URL: http://fontconfig.org
 
 name=fontconfig
-version=2.10.0
+version=2.10.1
 release=1
 source=(http://fontconfig.org/release/$name-$version.tar.gz)
 depends=(freetype expat)
