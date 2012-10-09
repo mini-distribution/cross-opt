@@ -1,7 +1,6 @@
 drwxr-xr-x	root/root	usr/
 drwxr-xr-x	root/root	usr/bin/
 -rwxr-xr-x	root/root	usr/bin/gst-discoverer-1.0
--rwxr-xr-x	root/root	usr/bin/gst-visualise-1.0
 drwxr-xr-x	root/root	usr/include/
 drwxr-xr-x	root/root	usr/include/gstreamer-1.0/
 drwxr-xr-x	root/root	usr/include/gstreamer-1.0/gst/
@@ -9,8 +8,11 @@ drwxr-xr-x	root/root	usr/include/gstreamer-1.0/gst/app/
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/app/gstappsink.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/app/gstappsrc.h
 drwxr-xr-x	root/root	usr/include/gstreamer-1.0/gst/audio/
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/audio/audio-channels.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/audio/audio-enumtypes.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/audio/audio-format.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/audio/audio.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/audio/audio-info.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/audio/gstaudiobasesink.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/audio/gstaudiobasesrc.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/audio/gstaudiocdsrc.h
@@ -80,9 +82,16 @@ drwxr-xr-x	root/root	usr/include/gstreamer-1.0/gst/video/
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/gstvideosink.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/gstvideoutils.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/navigation.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video-blend.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video-color.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video-enumtypes.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video-event.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video-format.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video-frame.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video-info.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/videoorientation.h
+-rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/video-overlay-composition.h
 -rw-r--r--	root/root	usr/include/gstreamer-1.0/gst/video/videooverlay.h
 drwxr-xr-x	root/root	usr/lib/
 drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
@@ -102,8 +111,6 @@ drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstaudiotestsrc.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstencodebin.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstencodebin.so
--rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstgdp.la
--rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstgdp.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstgio.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstgio.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstplayback.la
@@ -123,45 +130,45 @@ drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstvolume.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstvolume.so
 -rwxr-xr-x	root/root	usr/lib/libgstapp-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstapp-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstapp-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstapp-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstapp-1.0.so.0 -> libgstapp-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstapp-1.0.so -> libgstapp-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgstaudio-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstaudio-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstaudio-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstaudio-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstaudio-1.0.so.0 -> libgstaudio-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstaudio-1.0.so -> libgstaudio-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgstfft-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstfft-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstfft-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstfft-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstfft-1.0.so.0 -> libgstfft-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstfft-1.0.so -> libgstfft-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgstpbutils-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstpbutils-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstpbutils-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstpbutils-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstpbutils-1.0.so.0 -> libgstpbutils-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstpbutils-1.0.so -> libgstpbutils-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgstriff-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstriff-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstriff-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstriff-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstriff-1.0.so.0 -> libgstriff-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstriff-1.0.so -> libgstriff-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgstrtp-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstrtp-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstrtp-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstrtp-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstrtp-1.0.so.0 -> libgstrtp-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstrtp-1.0.so -> libgstrtp-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgstrtsp-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstrtsp-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstrtsp-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstrtsp-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstrtsp-1.0.so.0 -> libgstrtsp-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstrtsp-1.0.so -> libgstrtsp-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgstsdp-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstsdp-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstsdp-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstsdp-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstsdp-1.0.so.0 -> libgstsdp-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstsdp-1.0.so -> libgstsdp-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgsttag-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgsttag-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgsttag-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgsttag-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgsttag-1.0.so.0 -> libgsttag-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgsttag-1.0.so -> libgsttag-1.0.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libgstvideo-1.0.la
-lrwxrwxrwx	root/root	usr/lib/libgstvideo-1.0.so
-lrwxrwxrwx	root/root	usr/lib/libgstvideo-1.0.so.0
 -rwxr-xr-x	root/root	usr/lib/libgstvideo-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstvideo-1.0.so.0 -> libgstvideo-1.0.so.0.0.0
+lrwxrwxrwx	root/root	usr/lib/libgstvideo-1.0.so -> libgstvideo-1.0.so.0.0.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/gstreamer-app-1.0.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/gstreamer-audio-1.0.pc
@@ -180,4 +187,4 @@ drwxr-xr-x	root/root	usr/share/gst-plugins-base/1.0/
 -rw-r--r--	root/root	usr/share/gst-plugins-base/1.0/license-translations.dict
 drwxr-xr-x	root/root	usr/share/man/
 drwxr-xr-x	root/root	usr/share/man/man1/
--rw-r--r--	root/root	usr/share/man/man1/gst-visualise-1.0.1
+-rw-r--r--	root/root	usr/share/man/man1/gst-discoverer-1.0.1
