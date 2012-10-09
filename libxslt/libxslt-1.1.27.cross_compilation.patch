@@ -1,0 +1,32 @@
+diff --git a/a/configure b/b/configure
+index db757d0..1cb9ee8 100755
+--- a/configure
++++ b/configure
+@@ -13728,24 +13728,9 @@ then
+ fi
+ 
+ 
+-if ${XML_CONFIG} --libs print > /dev/null 2>&1
+-then
+-	XMLVERS=`$XML_CONFIG --version`
+-	if test `echo $XMLVERS | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'` -ge `echo $LIBXML_REQUIRED_VERSION | sed -e 's/libxml //' | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
+-	then
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $XMLVERS found" >&5
+-$as_echo "$XMLVERS found" >&6; }
+-	else
+-		as_fn_error $? "Version $XMLVERS found. You need at least libxml2 $LIBXML_REQUIRED_VERSION for this version of libxslt" "$LINENO" 5
+-	fi
+-	LIBXML_LIBS="$LIBXML_LIBS `$XML_CONFIG --libs`"
+-	if test "x$LIBXML_SRC" = "x"; then
+-		LIBXML_CFLAGS="$LIBXML_CFLAGS `$XML_CONFIG --cflags`"
+-	fi
+-else
+-	as_fn_error $? "Could not find libxml2 anywhere, check ftp://xmlsoft.org/." "$LINENO" 5
+-fi
+-
++XMLVERS=`$XML_CONFIG --version`
++LIBXML_LIBS="-L${SRC_DIR} -lxml2 -lz -lm"
++LIBXML_CFLAGS="-I${SRC_DIR}/include -I${SRC_DIR}/include/libxml2"
+ 
+ 
+ 

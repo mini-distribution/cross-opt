@@ -2,7 +2,7 @@
 # URL: http://xmlsoft.org/XSLT
 
 name=libxslt
-version=1.1.26
+version=1.1.27
 release=1
 source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz \
         $name-$version.cross_compilation.patch)
