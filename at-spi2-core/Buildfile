@@ -1,0 +1,33 @@
+# Description: A set of interfaces for accessibility
+# URL: http://developer.gnome.org/libatspi/
+
+name=at-spi2-core
+version=2.6.0
+release=1
+source=(http://download.gnome.org/sources/$name/${version%.*}/$name-$version.tar.xz)
+depends=(atk libX11 libXtst)
+
+build () {
+   cd $name-$version
+
+   ac_cv_alignof_dbus_bool_t=4 \
+   ac_cv_alignof_dbus_int16_t=2 \
+   ac_cv_alignof_dbus_int32_t=4 \
+   ac_cv_alignof_dbus_int64_t=8 \
+   ac_cv_alignof_double=8 \
+   ac_cv_alignof_dbind_pointer=4 \
+   ac_cv_alignof_dbind_struct=1 \
+   ac_cv_alignof_char=1 \
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share/locale
+   rm -r $PKG/usr/share/gtk-doc
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
