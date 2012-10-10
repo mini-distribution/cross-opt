@@ -52,9 +52,9 @@ drwxr-xr-x	root/root	usr/lib/alsa-lib/smixer/
 -rwxr-xr-x	root/root	usr/lib/alsa-lib/smixer/smixer-sbase.la
 -rwxr-xr-x	root/root	usr/lib/alsa-lib/smixer/smixer-sbase.so
 -rwxr-xr-x	root/root	usr/lib/libasound.la
-lrwxrwxrwx	root/root	usr/lib/libasound.so
-lrwxrwxrwx	root/root	usr/lib/libasound.so.2
 -rwxr-xr-x	root/root	usr/lib/libasound.so.2.0.0
+lrwxrwxrwx	root/root	usr/lib/libasound.so.2 -> libasound.so.2.0.0
+lrwxrwxrwx	root/root	usr/lib/libasound.so -> libasound.so.2.0.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/alsa.pc
 drwxr-xr-x	root/root	usr/share/
