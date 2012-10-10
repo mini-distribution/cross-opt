@@ -85,6 +85,7 @@ drwxr-xr-x	root/root	usr/share/alsa/cards/
 -rw-r--r--	root/root	usr/share/alsa/cards/CMI8738-MC8.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/CMI8788.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/CS46xx.conf
+-rw-r--r--	root/root	usr/share/alsa/cards/Echo_Echo3G.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/EMU10K1.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/EMU10K1X.conf
 -rw-r--r--	root/root	usr/share/alsa/cards/ENS1370.conf
