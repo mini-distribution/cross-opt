@@ -204,6 +204,12 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hash_get_len.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hash_init.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hash_output.3
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_allowed.3
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_enable.3
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_get_timeout.3
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_ping.3
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_pong.3
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_heartbeat_set_timeouts.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hex2bin.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hex_decode.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_hex_encode.3
@@ -779,6 +785,7 @@ drwxr-xr-x	root/root	usr/share/man/man3/
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_privkey_fix.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_privkey_generate.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_privkey_get_key_id.3
+-rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_privkey_get_pk_algorithm2.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_privkey_get_pk_algorithm.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_privkey_import2.3
 -rw-r--r--	root/root	usr/share/man/man3/gnutls_x509_privkey_import.3
