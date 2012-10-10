@@ -5,7 +5,9 @@ name=readline
 version=6.2
 release=1
 source=(http://ftp.gnu.org/gnu/$name/$name-$version.tar.gz \
-        readline62-001 readline62-002 inputrc)
+        readline62-001 readline62-002 inputrc \
+        http://ftp.gnu.org/gnu/readline/readline-6.2-patches/readline62-003 \
+        http://ftp.gnu.org/gnu/readline/readline-6.2-patches/readline62-004)
 depends=(ncurses)
 
 build() {
@@ -13,6 +15,8 @@ build() {
 
    patch -p0 < $SRC/readline62-001
    patch -p0 < $SRC/readline62-002
+   patch -p0 < $SRC/readline62-003
+   patch -p0 < $SRC/readline62-004
 
    # Don't use rpath for linking the shared libs
    sed -i '117s/-Wl,-rpath,$(libdir)//' support/shobj-conf
