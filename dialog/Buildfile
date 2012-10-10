@@ -2,7 +2,7 @@
 # URL: http://hightek.org/dialog/
 
 name=dialog
-version=1.1-20100119
+version=1.1-20120706
 release=1
 source=(ftp://dickey.his.com/$name/$name-$version.tgz)
 depends=ncurses
