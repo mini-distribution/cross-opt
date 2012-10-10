@@ -20,12 +20,12 @@ drwxr-xr-x	root/root	usr/lib/
 -rw-r--r--	root/root	usr/lib/libdb-4.8.a
 -rw-r--r--	root/root	usr/lib/libdb-4.8.la
 -rwxr-xr-x	root/root	usr/lib/libdb-4.8.so
-lrwxrwxrwx	root/root	usr/lib/libdb-4.so
+lrwxrwxrwx	root/root	usr/lib/libdb-4.so -> libdb-4.8.so
 -rw-r--r--	root/root	usr/lib/libdb.a
 -rw-r--r--	root/root	usr/lib/libdb_cxx-4.8.a
 -rw-r--r--	root/root	usr/lib/libdb_cxx-4.8.la
 -rwxr-xr-x	root/root	usr/lib/libdb_cxx-4.8.so
-lrwxrwxrwx	root/root	usr/lib/libdb_cxx-4.so
+lrwxrwxrwx	root/root	usr/lib/libdb_cxx-4.so -> libdb_cxx-4.8.so
 -rw-r--r--	root/root	usr/lib/libdb_cxx.a
-lrwxrwxrwx	root/root	usr/lib/libdb_cxx.so
-lrwxrwxrwx	root/root	usr/lib/libdb.so
+lrwxrwxrwx	root/root	usr/lib/libdb_cxx.so -> libdb_cxx-4.8.so
+lrwxrwxrwx	root/root	usr/lib/libdb.so -> libdb-4.8.so
