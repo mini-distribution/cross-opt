@@ -2,7 +2,7 @@
 # URL: http://www.libtiff.org/
 
 name=libtiff
-version=4.0.2
+version=4.0.3
 release=1
 source=(ftp://ftp.remotesensing.org/pub/libtiff/tiff-$version.tar.gz)
 depends=(zlib libjpeg)
