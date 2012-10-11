@@ -41,5 +41,5 @@ build() {
    make DESTDIR=$PKG install
 
    install -D -m 0755 client/connmanctl $PKG/usr/bin/connmanctl
-   install -D $SRC/connman.service $PKG/etc/systemd/system/connman.service
+   install -D -m 0644 $SRC/connman.service $PKG/etc/systemd/system/connman.service
 }
