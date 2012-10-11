@@ -10,6 +10,7 @@ drwxr-xr-x	root/root	usr/include/libiptc/
 -rw-r--r--	root/root	usr/include/libiptc/libxtc.h
 -rw-r--r--	root/root	usr/include/libiptc/xtcshared.h
 -rw-r--r--	root/root	usr/include/xtables.h
+-rw-r--r--	root/root	usr/include/xtables-version.h
 drwxr-xr-x	root/root	usr/lib/
 -rwxr-xr-x	root/root	usr/lib/libip4tc.la
 -rwxr-xr-x	root/root	usr/lib/libip4tc.so.0.1.0
@@ -28,9 +29,9 @@ lrwxrwxrwx	root/root	usr/lib/libipq.so -> libipq.so.0.0.0
 lrwxrwxrwx	root/root	usr/lib/libiptc.so.0 -> libiptc.so.0.0.0
 lrwxrwxrwx	root/root	usr/lib/libiptc.so -> libiptc.so.0.0.0
 -rwxr-xr-x	root/root	usr/lib/libxtables.la
--rwxr-xr-x	root/root	usr/lib/libxtables.so.7.1.0
-lrwxrwxrwx	root/root	usr/lib/libxtables.so.7 -> libxtables.so.7.1.0
-lrwxrwxrwx	root/root	usr/lib/libxtables.so -> libxtables.so.7.1.0
+-rwxr-xr-x	root/root	usr/lib/libxtables.so.9.0.0
+lrwxrwxrwx	root/root	usr/lib/libxtables.so.9 -> libxtables.so.9.0.0
+lrwxrwxrwx	root/root	usr/lib/libxtables.so -> libxtables.so.9.0.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/libip4tc.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/libip6tc.pc
@@ -166,5 +167,6 @@ drwxr-xr-x	root/root	usr/share/man/man8/
 -rw-r--r--	root/root	usr/share/man/man8/ip6tables-restore.8
 -rw-r--r--	root/root	usr/share/man/man8/ip6tables-save.8
 -rw-r--r--	root/root	usr/share/man/man8/iptables.8
+-rw-r--r--	root/root	usr/share/man/man8/iptables-extensions.8
 -rw-r--r--	root/root	usr/share/man/man8/iptables-restore.8
 -rw-r--r--	root/root	usr/share/man/man8/iptables-save.8
