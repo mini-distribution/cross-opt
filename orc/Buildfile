@@ -1,0 +1,24 @@
+# Description: ORC is a library and simple set of tools for compiling and executing simple programs.
+# URL: http://code.entropywave.com/orc/
+
+name=orc
+version=0.4.16
+release=1
+source=(http://code.entropywave.com/download/orc/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-gtk-doc-html
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share/gtk-doc
+   
+   # Fix libtool files
+   fix_la_files $PKG
+}
