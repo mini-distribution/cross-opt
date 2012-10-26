@@ -4,7 +4,8 @@
 name=ntp
 version=4.2.6p5
 release=1
-source=(http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/$name-$version.tar.gz)
+source=(http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/$name-$version.tar.gz
+        ntp.conf ntpd.service)
 depends=openssl
 
 build () {
@@ -20,4 +21,11 @@ build () {
                --enable-all-clocks
    make -j $JOBS
    make DESTDIR=$PKG install
+
+   install -Dm644 $SRC/ntp.conf $PKG/etc/ntp.conf
+   install -Dm644 $SRC/ntpd.service $PKG/etc/systemd/system/ntpd.service
+   
+   #Open port used by NTP
+   echo "ntp 123/udp" >> $PKG/etc/services
+
 }
