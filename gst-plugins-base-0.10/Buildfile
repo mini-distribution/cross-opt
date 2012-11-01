@@ -1,11 +1,11 @@
 # Description: Library for constructing graphs of media-handling components
 # URL: http://gstreamer.freedesktop.org
 
-name=gstreamer-0.10
+name=gst-plugins-base-0.10
 version=0.10.36
 release=1
-source=(http://gstreamer.freedesktop.org/src/gstreamer/$name.36.tar.xz)
-depends=(glib)
+source=(http://gstreamer.freedesktop.org/src/gst-plugins-base/$name.36.tar.xz)
+depends=(gstreamer-0.10)
 
 build() {
    cd $name.36
@@ -13,7 +13,11 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
-               --disable-{examples,tests,loadsave}
+               --disable-{examples,tests,loadsave} \
+               --disable-ogg \
+               --disable-ogg-test \
+               --disable-vorbis \
+               --disable-vorbis-test
 
    make -j $JOBS
    make DESTDIR=$PKG install
