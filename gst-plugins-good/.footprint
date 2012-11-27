@@ -79,6 +79,8 @@ drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstspectrum.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstudp.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstudp.so
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstvideo4linux2.la
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstvideo4linux2.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstvideobox.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstvideobox.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstvideocrop.la
