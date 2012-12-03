@@ -50,6 +50,8 @@ drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstdvbsuboverlay.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstdvdspu.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstdvdspu.so
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstfaad.la
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstfaad.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstfestival.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstfestival.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstfieldanalysis.la
