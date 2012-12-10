@@ -1,0 +1,24 @@
+# Description: gst-rtsp-server is a library ion top of GStreamer for building an RTSP server 
+# URL: http://cgit.freedesktop.org/gstreamer/gst-rtsp-server/
+
+name=gst-rtsp-server
+version=git-9387c4b4
+release=1
+source=(http://www.buildgear.org/mirror/$name-$version.tar.gz)
+depends=(glib gstreamer gst-plugins-base)
+
+build()
+{
+    
+    cd $name-$version
+
+    ./configure --host=$HOST --prefix=/usr
+
+    make -j$JOBS
+
+    make install DESTDIR=$PKG
+
+    # Fix installed la files
+    fix_la_files $PKG
+   
+}
