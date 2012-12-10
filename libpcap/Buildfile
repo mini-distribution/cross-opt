@@ -10,7 +10,9 @@ build ()
 {
     cd $name-$version
 
-    sed -i '/ln [^-][^s]/s/ln/ln -s/' Makefile.in
+    install -d $PKG/usr/bin
+
+    sed -i 's|ln $(DESTDIR)$(mandir)/man3/|ln -s |g' Makefile.in
 
     ./configure --build=$BUILD \
                 --host=$HOST \
@@ -18,5 +20,5 @@ build ()
                 --with-pcap=linux
 
     make -j $JOBS
-    make DESTDIR=$PKG install
+    make DESTDIR=$PKG install install-shared
 }
