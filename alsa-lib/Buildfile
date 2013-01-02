@@ -12,7 +12,8 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
-               --disable-python 
+               --disable-python \
+               --without-debug
 
    make -j $JOBS
    make DESTDIR=$PKG install
