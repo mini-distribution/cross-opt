@@ -40,6 +40,8 @@ drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/xtables.pc
 drwxr-xr-x	root/root	usr/lib/xtables/
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_ah.so
+-rwxr-xr-x	root/root	usr/lib/xtables/libip6t_DNAT.so
+-rwxr-xr-x	root/root	usr/lib/xtables/libip6t_DNPT.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_dst.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_eui64.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_frag.so
@@ -49,9 +51,14 @@ drwxr-xr-x	root/root	usr/lib/xtables/
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_icmp6.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_ipv6header.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_LOG.so
+-rwxr-xr-x	root/root	usr/lib/xtables/libip6t_MASQUERADE.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_mh.so
+-rwxr-xr-x	root/root	usr/lib/xtables/libip6t_NETMAP.so
+-rwxr-xr-x	root/root	usr/lib/xtables/libip6t_REDIRECT.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_REJECT.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libip6t_rt.so
+-rwxr-xr-x	root/root	usr/lib/xtables/libip6t_SNAT.so
+-rwxr-xr-x	root/root	usr/lib/xtables/libip6t_SNPT.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libipt_ah.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libipt_CLUSTERIP.so
 -rwxr-xr-x	root/root	usr/lib/xtables/libipt_DNAT.so
