@@ -13,10 +13,7 @@ depends=(ncurses)
 build() {
    cd $name-$version
 
-   patch -p0 < $SRC/readline62-001
-   patch -p0 < $SRC/readline62-002
-   patch -p0 < $SRC/readline62-003
-   patch -p0 < $SRC/readline62-004
+   cat $SRC/readline62-??? | patch -p0
 
    # Don't use rpath for linking the shared libs
    sed -i '117s/-Wl,-rpath,$(libdir)//' support/shobj-conf
