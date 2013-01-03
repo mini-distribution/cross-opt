@@ -2,7 +2,7 @@
 # URL: http://www.lighttpd.net/
 
 name=lighttpd
-version=1.4.31
+version=1.4.32
 release=1
 source=(http://download.$name.net/$name/releases-1.4.x/$name-$version.tar.bz2 \
         $name.conf
@@ -12,9 +12,9 @@ depends=(libpcre openssl bzip2)
 
 build() {
    cd $name-$version
-    
+
    patch -p1 < $SRC/root_user.patch
-    
+
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
