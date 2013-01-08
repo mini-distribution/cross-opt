@@ -78,6 +78,8 @@ drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstliveadder.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmpegpsdemux.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmpegpsdemux.so
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmpegpsmux.la
+-rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmpegpsmux.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmpegtsdemux.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmpegtsdemux.so
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgstmpegtsmux.la
@@ -115,25 +117,25 @@ drwxr-xr-x	root/root	usr/lib/gstreamer-1.0/
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgsty4mdec.la
 -rwxr-xr-x	root/root	usr/lib/gstreamer-1.0/libgsty4mdec.so
 -rwxr-xr-x	root/root	usr/lib/libgstbasecamerabinsrc-1.0.la
--rwxr-xr-x	root/root	usr/lib/libgstbasecamerabinsrc-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstbasecamerabinsrc-1.0.so.0 -> libgstbasecamerabinsrc-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstbasecamerabinsrc-1.0.so -> libgstbasecamerabinsrc-1.0.so.0.4.0
+-rwxr-xr-x	root/root	usr/lib/libgstbasecamerabinsrc-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstbasecamerabinsrc-1.0.so.0 -> libgstbasecamerabinsrc-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstbasecamerabinsrc-1.0.so -> libgstbasecamerabinsrc-1.0.so.0.5.0
 -rwxr-xr-x	root/root	usr/lib/libgstbasevideo-1.0.la
--rwxr-xr-x	root/root	usr/lib/libgstbasevideo-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstbasevideo-1.0.so.0 -> libgstbasevideo-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstbasevideo-1.0.so -> libgstbasevideo-1.0.so.0.4.0
+-rwxr-xr-x	root/root	usr/lib/libgstbasevideo-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstbasevideo-1.0.so.0 -> libgstbasevideo-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstbasevideo-1.0.so -> libgstbasevideo-1.0.so.0.5.0
 -rwxr-xr-x	root/root	usr/lib/libgstcodecparsers-1.0.la
--rwxr-xr-x	root/root	usr/lib/libgstcodecparsers-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstcodecparsers-1.0.so.0 -> libgstcodecparsers-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstcodecparsers-1.0.so -> libgstcodecparsers-1.0.so.0.4.0
+-rwxr-xr-x	root/root	usr/lib/libgstcodecparsers-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstcodecparsers-1.0.so.0 -> libgstcodecparsers-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstcodecparsers-1.0.so -> libgstcodecparsers-1.0.so.0.5.0
 -rwxr-xr-x	root/root	usr/lib/libgstphotography-1.0.la
--rwxr-xr-x	root/root	usr/lib/libgstphotography-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstphotography-1.0.so.0 -> libgstphotography-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstphotography-1.0.so -> libgstphotography-1.0.so.0.4.0
+-rwxr-xr-x	root/root	usr/lib/libgstphotography-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstphotography-1.0.so.0 -> libgstphotography-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstphotography-1.0.so -> libgstphotography-1.0.so.0.5.0
 -rwxr-xr-x	root/root	usr/lib/libgstsignalprocessor-1.0.la
--rwxr-xr-x	root/root	usr/lib/libgstsignalprocessor-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstsignalprocessor-1.0.so.0 -> libgstsignalprocessor-1.0.so.0.4.0
-lrwxrwxrwx	root/root	usr/lib/libgstsignalprocessor-1.0.so -> libgstsignalprocessor-1.0.so.0.4.0
+-rwxr-xr-x	root/root	usr/lib/libgstsignalprocessor-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstsignalprocessor-1.0.so.0 -> libgstsignalprocessor-1.0.so.0.5.0
+lrwxrwxrwx	root/root	usr/lib/libgstsignalprocessor-1.0.so -> libgstsignalprocessor-1.0.so.0.5.0
 drwxr-xr-x	root/root	usr/lib/pkgconfig/
 -rw-r--r--	root/root	usr/lib/pkgconfig/gstreamer-basevideo-1.0.pc
 -rw-r--r--	root/root	usr/lib/pkgconfig/gstreamer-codecparsers-1.0.pc
