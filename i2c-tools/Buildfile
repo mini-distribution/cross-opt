@@ -1,0 +1,15 @@
+# Description: i2c-tools package contains a heterogeneous set of I2C tools for Linux.
+# URL: http://www.lm-sensors.org/wiki/I2CTools
+
+name=i2c-tools
+version=3.1.0
+release=1
+source=(http://dl.lm-sensors.org/i2c-tools/releases/$name-$version.tar.bz2)
+
+build()
+{
+   cd $name-$version
+
+   make CC=$HOST-gcc KERNELVERSION=2.6.37 prefix=/usr sbindir=/usr/bin DESTDIR=$PKG install
+
+}
