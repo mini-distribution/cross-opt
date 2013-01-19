@@ -2,7 +2,7 @@
 # URL: http://www.ijg.org/
 
 name=libjpeg
-version=8d
+version=9
 release=1
 source=(http://www.ijg.org/files/jpegsrc.v$version.tar.gz)
 
