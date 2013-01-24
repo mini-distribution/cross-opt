@@ -2,7 +2,7 @@
 # URL: http://www.libpng.org
 
 name=libpng
-version=1.5.13
+version=1.5.14
 release=1
 source=(ftp://ftp.simplesystems.org/pub/$name/png/src/$name-$version.tar.xz)
 depends=zlib
