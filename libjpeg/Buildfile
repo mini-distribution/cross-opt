@@ -4,10 +4,14 @@
 name=libjpeg
 version=9
 release=1
-source=(http://www.ijg.org/files/jpegsrc.v$version.tar.gz)
+source=(http://www.ijg.org/files/jpegsrc.v$version.tar.gz
+        boolean.patch)
 
 build() {
+
    cd jpeg-$version
+
+   patch -p2 < $SRC/boolean.patch
 
    ./configure --build=$BUILD \
                --host=$HOST \
