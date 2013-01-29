@@ -2,16 +2,13 @@
 # URL: http://www.ijg.org/
 
 name=libjpeg
-version=9
+version=9a
 release=1
-source=(http://www.ijg.org/files/jpegsrc.v$version.tar.gz
-        boolean.patch)
+source=(http://www.infai.org/jpeg/files?get=jpegsrc.v0$version.tar.gz)
 
 build() {
 
    cd jpeg-$version
-
-   patch -p2 < $SRC/boolean.patch
 
    ./configure --build=$BUILD \
                --host=$HOST \
