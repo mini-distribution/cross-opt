@@ -1,0 +1,25 @@
+# Description: GNU Midnight Commander
+# URL:         http://www.midnight-commander.org
+
+name=mc
+version=4.8.7
+release=1
+source=(http://www.midnight-commander.org/downloads/$name-$version.tar.xz)
+depends=(ncurses glib)
+
+build () {
+   cd $name-$version
+
+   ./configure --host=$HOST \
+               --build=$BUILD \
+               --prefix=/usr \
+               --mandir=/usr/share/man \
+               --libexecdir=/usr/lib \
+               --disable-nls \
+               --with-screen=ncurses
+
+    make
+    make DESTDIR=$PKG install
+
+    rm $PKG/usr/lib/mc/*/README*
+}
