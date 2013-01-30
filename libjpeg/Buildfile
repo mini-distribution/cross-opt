@@ -4,7 +4,7 @@
 name=libjpeg
 version=9a
 release=1
-source=(http://www.infai.org/jpeg/files?get=jpegsrc.v0$version.tar.gz)
+source=(http://buildgear.org/mirror/jpegsrc.v0$version.tar.gz)
 
 build() {
 
