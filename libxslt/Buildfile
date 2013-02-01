@@ -2,16 +2,16 @@
 # URL: http://xmlsoft.org/XSLT
 
 name=libxslt
-version=1.1.27
+version=1.1.28
 release=1
-source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz \
-        $name-$version.cross_compilation.patch)
+source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz
+        cross_compilation.patch)
 depends=libxml2
 
 build() {
    cd $name-$version
 
-   patch -p1 -i $SRC/$name-$version.cross_compilation.patch
+   patch -p1 -i $SRC/cross_compilation.patch
 
    ./configure --build=$BUILD \
                --host=$HOST \
