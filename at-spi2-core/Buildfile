@@ -2,7 +2,7 @@
 # URL: http://developer.gnome.org/libatspi/
 
 name=at-spi2-core
-version=2.6.0
+version=2.6.3
 release=1
 source=(http://download.gnome.org/sources/$name/${version%.*}/$name-$version.tar.xz)
 depends=(atk libX11 libXtst)
