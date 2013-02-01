@@ -2,7 +2,7 @@
 # URL: http://www.infradead.org/~tgr/libnl/
 
 name=libnl
-version=3.2.16
+version=3.2.21
 release=1
 source=(http://www.infradead.org/~tgr/libnl/files/$name-$version.tar.gz)
 
