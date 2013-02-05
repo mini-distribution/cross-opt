@@ -5,7 +5,7 @@ name=gst-plugins-bad
 version=1.0.5
 release=1
 source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
-depends=(gstreamer gst-plugins-base orc faad2)
+depends=(gstreamer gst-plugins-base orc)
 
 build() {
    cd $name-$version
