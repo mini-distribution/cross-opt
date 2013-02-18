@@ -29,7 +29,6 @@ build() {
                --disable-vpnc \
                --disable-l2tp \
                --disable-pptp \
-               --disable-iwmx \
                --disable-iospm \
                --disable-test \
                --disable-tist \
