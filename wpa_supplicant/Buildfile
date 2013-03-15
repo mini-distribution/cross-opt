@@ -2,7 +2,7 @@
 # URL: http://hostap.epitest.fi/wpa_supplicant/
 
 name=wpa_supplicant
-version=1.0
+version=2.0
 release=1
 source=(http://hostap.epitest.fi/releases/$name-$version.tar.gz
         wpa_supplicant.service
