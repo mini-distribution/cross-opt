@@ -2,14 +2,16 @@
 # URL: http://connman.net/
 
 name=connman
-version=1.11
+version=1.12
 release=1
 source=(http://www.kernel.org/pub/linux/network/connman/$name-$version.tar.xz
-        connman.service)
+        connman.service ip6-header-include.patch)
 depends=(glib dbus iptables gnutls readline wpa_supplicant systemd)
 
 build() {
    cd $name-$version
+
+   patch -p1 < $SRC/ip6-header-include.patch
 
    ./configure --build=$BUILD \
                --host=$HOST \
@@ -29,7 +31,6 @@ build() {
                --disable-vpnc \
                --disable-l2tp \
                --disable-pptp \
-               --disable-iwmx \
                --disable-iospm \
                --disable-test \
                --disable-tist \

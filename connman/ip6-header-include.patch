@@ -1,0 +1,11 @@
+diff -Nurp a/src/tethering.c b/src/tethering.c
+--- a/src/tethering.c	2013-03-03 18:25:32.758279622 +0100
++++ b/src/tethering.c	2013-03-03 18:26:17.069741879 +0100
+@@ -35,6 +35,7 @@
+ #include <string.h>
+ #include <fcntl.h>
+ #include <linux/if_tun.h>
++#include <netinet/ip6.h>
+ #include <linux/if_bridge.h>
+ 
+ #include "connman.h"
