@@ -1,0 +1,27 @@
+# Description: Valgrind is an instrumentation framework for building dynamic analysis tools
+# URL: http://valgrind.org/
+
+name=valgrind
+version=3.8.1
+release=1
+source=(http://valgrind.org/downloads/$name-$version.tar.bz2
+        host-type-arm.patch glibc-2-17.patch)
+
+build() {
+   cd $name-$version
+
+   patch -p1 < $SRC/host-type-arm.patch
+   patch -p1 < $SRC/glibc-2-17.patch
+
+   ./autogen.sh NOCONFIGURE=1
+
+   ./configure --prefix=/usr  \
+               --host=$HOST   \
+               --build=$BUILD \
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/usr/share/doc
+
+}
