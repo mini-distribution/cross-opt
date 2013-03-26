@@ -2,7 +2,7 @@
 # URL: http://code.entropywave.com/orc/
 
 name=orc
-version=0.4.16
+version=0.4.17
 release=1
 source=(http://code.entropywave.com/download/orc/$name-$version.tar.gz)
 
