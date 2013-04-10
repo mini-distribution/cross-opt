@@ -2,7 +2,7 @@
 # URL:         http://www.midnight-commander.org
 
 name=mc
-version=4.8.7
+version=4.8.8
 release=1
 source=(http://www.midnight-commander.org/downloads/$name-$version.tar.xz)
 depends=(ncurses glib)
@@ -16,7 +16,8 @@ build () {
                --mandir=/usr/share/man \
                --libexecdir=/usr/lib \
                --disable-nls \
-               --with-screen=ncurses
+               --with-screen=ncurses \
+               LIBS=-ltinfo
 
     make
     make DESTDIR=$PKG install
