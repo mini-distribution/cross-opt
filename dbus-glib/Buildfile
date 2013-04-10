@@ -2,7 +2,7 @@
 # URL: http://www.freedesktop.org/wiki/Software/DBusBindings/
 
 name=dbus-glib
-version=0.100
+version=0.100.2
 release=1
 source=(http://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz)
 depends=(dbus glib expat)
