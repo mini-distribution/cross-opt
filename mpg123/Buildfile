@@ -1,0 +1,22 @@
+# Description: Fast console MPEG Audio Player and decoder library
+# URL: http://www.mpg123.de/
+
+name=mpg123
+version=1.15.3
+release=1
+source=(http://surfnet.dl.sourceforge.net/project/$name/$name/$version/$name-$version.tar.bz2)
+depends=()
+
+build() {
+   cd $name-$version
+
+   ./configure --prefix=/usr  \
+               --host=$HOST   \
+               --build=$BUILD
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+
+   fix_la_files $PKG
+
+}
