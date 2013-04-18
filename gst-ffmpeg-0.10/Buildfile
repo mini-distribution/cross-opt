@@ -1,0 +1,21 @@
+# Description: Describe the build here
+# URL: http://www.something.com
+
+name=gst-ffmpeg-0.10
+version=0.10.13
+release=1
+source=(http://gstreamer.freedesktop.org/src/${name%-*}/${name%-*}-$version.tar.gz)
+depends=(gst-plugins-base-0.10)
+
+build() {
+   cd ${name%-*}-$version
+
+   ./configure --prefix=/usr  \
+               --host=$HOST   \
+               --build=$BUILD \
+               --with-ffmpeg-extra-configure="--target-os=linux"
+
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+}

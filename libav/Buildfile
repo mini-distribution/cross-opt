@@ -1,0 +1,29 @@
+# Description: Describe the build here
+# URL: http://www.something.com
+
+name=libav
+version=9.4
+release=1
+source=(http://libav.org/releases/$name-$version.tar.xz)
+depends=()
+
+build() {
+   cd $name-$version
+
+   ./configure --prefix=/usr           \
+               --cross-prefix=$HOST-   \
+               --enable-cross-compile  \
+               --target-os=linux       \
+               --arch=arm              \
+               --enable-gpl            \
+               --enable-shared         \
+               --disable-filters       \
+               --disable-protocols     \
+               --disable-devices       \
+               --disable-network       \
+               --disable-programs
+
+   make -j$JOBS
+
+   make DESTDIR=$PKG install
+}

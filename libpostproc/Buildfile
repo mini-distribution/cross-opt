@@ -1,0 +1,24 @@
+# Description: Describe the build here
+# URL: http://www.something.com
+
+name=libpostproc
+version=3b7053f
+release=1
+source=(http://buildgear.org/mirror/$name-$version.tar.gz)
+depends=(libav)
+
+build() {
+   cd $name-$version
+
+   ./configure --prefix=/usr           \
+               --cross-prefix=$HOST-   \
+               --enable-cross-compile  \
+               --target-os=linux       \
+               --arch=arm              \
+               --enable-gpl            \
+               --enable-shared
+
+   make -j$JOBS
+
+   make DESTDIR=$PKG install
+}
