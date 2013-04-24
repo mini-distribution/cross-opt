@@ -1,0 +1,23 @@
+# Description: OProfile is a system-wide profiler for Linux systems, capable of profiling all running code at low overhead.
+# URL: http://oprofile.sourceforge.net/news/
+
+name=oprofile
+version=0.9.8
+release=1
+source=(http://prdownloads.sourceforge.net/$name/$name-$version.tar.gz)
+depends=(popt which)
+
+build() {
+   cd $name-$version
+
+   ./configure --prefix=/usr     \
+               --build=$BUILD    \
+               --host=$HOST      \
+               --enable-gui no   \
+               --with-kernel=$NATIVE_SYSROOT/usr/src/linux
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+
+   fix_la_files $PKG
+}

@@ -1,0 +1,20 @@
+# Description: Popt is a C library for parsing command line parameters.
+# URL: http://rpm5.org/files/popt/
+
+name=popt
+version=1.16
+release=1
+source=(http://rpm5.org/files/$name/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   ./configure --prefix=/usr  \
+               --host=$HOST   \
+               --build=$BUILD
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+
+   fix_la_files $PKG
+}
