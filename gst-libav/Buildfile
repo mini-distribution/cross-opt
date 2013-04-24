@@ -1,0 +1,23 @@
+# Description: Libav-based plug-in containing many decoders and encoders
+# URL: http://gstreamer.freedesktop.org/
+
+name=gst-libav
+version=1.0.6
+release=1
+source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
+depends=(gst-plugins-base)
+
+build() {
+
+   cd $name-$version
+
+   ./configure --prefix=/usr  \
+               --host=$HOST   \
+               --build=$BUILD \
+               --with-libav-extra-configure="--target-os=linux --as=$HOST-gcc"
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+
+   fix_la_files $PKG
+}
