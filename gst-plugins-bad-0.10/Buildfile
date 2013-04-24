@@ -1,0 +1,26 @@
+# Description: Library for constructing graphs of media-handling components
+# URL: http://gstreamer.freedesktop.org
+
+name=gst-plugins-bad-0.10
+version=0.10.23
+release=1
+source=(http://gstreamer.freedesktop.org/src/${name%-*}/${name%-*}-$version.tar.xz)
+depends=(gstreamer-0.10 gst-plugins-base-0.10)
+
+build() {
+   cd ${name%-*}-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-sdl
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share/locale
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
+
