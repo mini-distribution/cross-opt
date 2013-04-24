@@ -4,15 +4,20 @@
 name=gst-plugins-bad
 version=1.0.6
 release=1
-source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
-depends=(gstreamer gst-plugins-base orc)
+source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz
+        port-fbdev-to-1.0.patch)
+depends=(gstreamer gst-plugins-base orc ti-graphics-sdk)
 
 build() {
+   patch -p1 < $SRC/port-fbdev-to-1.0.patch
+
    cd $name-$version
+
+   NOCONFIGURE=1 ./autogen.sh
 
    ./configure --build=$BUILD \
                --host=$HOST \
-               --prefix=/usr \
+               --prefix=/usr
 
    make -j $JOBS
    make DESTDIR=$PKG install
