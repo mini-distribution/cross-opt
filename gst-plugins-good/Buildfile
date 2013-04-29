@@ -2,7 +2,7 @@
 # URL: http://gstreamer.freedesktop.org
 
 name=gst-plugins-good
-version=1.0.6
+version=1.0.7
 release=1
 source=(http://gstreamer.freedesktop.org/src/gst-plugins-good/$name-$version.tar.xz)
 depends=(gstreamer gst-plugins-base libpng libjpeg orc)
