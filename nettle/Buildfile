@@ -2,7 +2,7 @@
 # URL: http://www.lysator.liu.se/~nisse/nettle
 
 name=nettle
-version=2.6
+version=2.7
 release=1
 source=(http://www.lysator.liu.se/~nisse/archive/$name-$version.tar.gz)
 depends=(gmp)
