@@ -16,7 +16,8 @@ build() {
                --disable-{examples,tests,loadsave} \
                --disable-gst_v4l2 \
                --disable-oss \
-               --disable-oss4
+               --disable-oss4 \
+               --disable-esd
 
    make -j $JOBS
    make DESTDIR=$PKG install
