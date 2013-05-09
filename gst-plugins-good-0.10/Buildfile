@@ -15,9 +15,26 @@ build() {
                --prefix=/usr \
                --disable-{examples,tests,loadsave} \
                --disable-gst_v4l2 \
-               --disable-oss \
-               --disable-oss4 \
-               --disable-esd
+               --disable-{oss,oss4} \
+               --disable-esd \
+               --disable-sunaudio \
+               --disable-{osx_audio,osx_video} \
+               --disable-{x,xshm,xvideo} \
+               --disable-aalib \
+               --disable-annodex \
+               --disable-cairo \
+               --disable-gconf \
+               --disable-gdk_pixbuf \
+               --disable-jack \
+               --disable-libcac \
+               --disable-libdv \
+               --disable-pulse \
+               --disable-dv1394 \
+               --disable-shout2 \
+               --disable-soup \
+               --disable-speex \
+               --disable-taglib \
+               --disable-wavpack
 
    make -j $JOBS
    make DESTDIR=$PKG install
