@@ -2,10 +2,10 @@
 # URL: http://connman.net/
 
 name=connman
-version=1.13
+version=1.14
 release=1
 source=(http://www.kernel.org/pub/linux/network/connman/$name-$version.tar.xz
-        connman.service ip6-header-include.patch)
+        connman.service)
 depends=(glib dbus iptables gnutls readline wpa_supplicant systemd)
 
 build() {
