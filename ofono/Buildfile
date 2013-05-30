@@ -1,0 +1,26 @@
+# Description: Open Source Telephony
+# URL: https://ofono.org
+
+name=ofono
+version=1.12
+release=1
+source=(https://www.kernel.org/pub/linux/network/ofono/$name-$version.tar.xz
+        ofono-ssize-type-fix.patch)
+depends=(systemd glib dbus mobile-broadband-provider-info)
+
+build() {
+   cd $name-$version
+
+   patch -p1 < $SRC/ofono-ssize-type-fix.patch
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-bluetooth
+
+   make
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

@@ -1,0 +1,11 @@
+diff -Naur a/src/storage.h b/src/storage.h
+--- a/src/storage.h	2011-10-11 20:21:45.000000000 +0200
++++ b/src/storage.h	2013-05-30 15:57:23.464779784 +0200
+@@ -26,6 +26,7 @@
+ #endif
+ 
+ #include <fcntl.h>
++#include <sys/types.h>
+ 
+ int create_dirs(const char *filename, const mode_t mode);
+ 
