@@ -1,0 +1,23 @@
+# Description: Official Linux Bluetooth protocol stack
+# URL: https://www.bluez.org
+
+name=bluez
+version=5.5
+release=1
+source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)
+depends=(systemd glib dbus readline libusb libical)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-usb
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
