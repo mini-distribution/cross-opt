@@ -1,0 +1,23 @@
+# Description: Open source implementation of the icalendar format
+# URL: http://sourceforge.net/projects/freeassociation/
+
+name=libical
+version=1.0
+release=1
+source=(http://switch.dl.sourceforge.net/project/freeassociation/libical/libical-1.0/$name-$version.tar.gz)
+depends=zlib
+
+build() {
+   cd $name-$version
+
+   libtoolize -f
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
