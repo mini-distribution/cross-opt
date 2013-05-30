@@ -1,0 +1,18 @@
+# Description: Library of PNG support functions
+# URL: http://www.libpng.org
+
+name=mobile-broadband-provider-info
+version=git-eaf82e5f14
+release=1
+source=(http://buildgear.org/mirror/$name-$version.tar.xz)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make
+   make DESTDIR=$PKG install
+}
