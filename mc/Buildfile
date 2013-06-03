@@ -4,7 +4,7 @@
 name=mc
 version=4.8.8
 release=1
-source=(http://www.midnight-commander.org/downloads/$name-$version.tar.xz)
+source=(ftp://ftp.midnight-commander.org/pub/midnightcommander/$name-$version.tar.xz)
 depends=(ncurses glib)
 
 build () {
