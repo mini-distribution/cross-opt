@@ -2,7 +2,7 @@
 # URL: http://connman.net/
 
 name=connman
-version=1.15
+version=1.16
 release=1
 source=(http://www.kernel.org/pub/linux/network/connman/$name-$version.tar.xz
         connman.service)
