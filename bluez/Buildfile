@@ -2,7 +2,7 @@
 # URL: https://www.bluez.org
 
 name=bluez
-version=5.5
+version=5.7
 release=1
 source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)
 depends=(systemd glib dbus readline libusb libical)
