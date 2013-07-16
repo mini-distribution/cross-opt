@@ -2,7 +2,7 @@
 # URL:         http://www.midnight-commander.org
 
 name=mc
-version=4.8.8
+version=4.8.9
 release=1
 source=(ftp://ftp.midnight-commander.org/pub/midnightcommander/$name-$version.tar.xz)
 depends=(ncurses glib)
