@@ -2,7 +2,7 @@
 # URL: http://www.something.com
 
 name=libav
-version=9.4
+version=9.8
 release=1
 source=(http://libav.org/releases/$name-$version.tar.xz)
 depends=()
