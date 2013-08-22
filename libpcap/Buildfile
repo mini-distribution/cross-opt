@@ -17,7 +17,8 @@ build ()
     ./configure --build=$BUILD \
                 --host=$HOST \
                 --prefix=/usr \
-                --with-pcap=linux
+                --with-pcap=linux \
+                --without-libnl
 
     make -j $JOBS
     make DESTDIR=$PKG install install-shared
