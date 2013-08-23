@@ -2,7 +2,7 @@
 # URL: http://oprofile.sourceforge.net/news/
 
 name=oprofile
-version=0.9.8
+version=0.9.9
 release=1
 source=(http://prdownloads.sourceforge.net/$name/$name-$version.tar.gz)
 depends=(popt which)
