@@ -2,16 +2,13 @@
 # URL:         http://www.vim.org/
 
 name=vim
-version=7.3
+version=7.4
 release=1
-source=(ftp://ftp.vim.org/pub/vim/unix/vim-7.3.tar.bz2
-        vim_uint32t.patch)
+source=(ftp://ftp.vim.org/pub/vim/unix/vim-$version.tar.bz2)
 depends=(ncurses acl)
 
 build () {
-    cd vim73/src
-
-    patch -p2 < $SRC/vim_uint32t.patch
+    cd vim${version/./}/src
 
     LDFLAGS=-ltinfo \
     vim_cv_toupper_broken=no \
@@ -33,7 +30,7 @@ build () {
         --disable-nls \
         --with-tlib=ncurses \
 
-    make -j$JOBS VIMRTDIR= 
+    make -j$JOBS VIMRTDIR=
     make VIMRTDIR= DESTDIR=$PKG installvimbin installruntime installlinks
 
     mv $PKG/usr/share/vim/vimrc_example.vim $PKG/usr/share/vim/vimrc
