@@ -26,3 +26,8 @@ build() {
    # Fix libtool files
    fix_la_files $PKG
 }
+
+check() {
+   # Needed while autogen.sh is used
+   check_tool autopoint
+}
