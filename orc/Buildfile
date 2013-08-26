@@ -2,7 +2,7 @@
 # URL: http://code.entropywave.com/orc/
 
 name=orc
-version=0.4.17
+version=0.4.18
 release=1
 source=(http://code.entropywave.com/download/orc/$name-$version.tar.gz)
 
@@ -18,7 +18,7 @@ build() {
    make DESTDIR=$PKG install
 
    rm -r $PKG/usr/share/gtk-doc
-   
+
    # Fix libtool files
    fix_la_files $PKG
 }
