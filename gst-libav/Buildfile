@@ -2,7 +2,7 @@
 # URL: http://gstreamer.freedesktop.org/
 
 name=gst-libav
-version=1.0.9
+version=1.0.10
 release=1
 source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
 depends=(gst-plugins-base)
