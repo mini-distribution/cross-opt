@@ -5,7 +5,7 @@ name=libpcap
 version=1.4.0
 release=1
 source=(http://www.tcpdump.org/release/$name-$version.tar.gz)
-
+depends=(libusb)
 build ()
 {
     cd $name-$version
