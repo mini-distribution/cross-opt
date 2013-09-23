@@ -2,9 +2,9 @@
 # URL: http://www.libpng.org
 
 name=libpng
-version=1.5.15
+version=1.6.6
 release=1
-source=(http://switch.dl.sourceforge.net/project/$name/libpng15/$version/$name-$version.tar.xz)
+source=(http://switch.dl.sourceforge.net/project/$name/libpng16/$version/$name-$version.tar.xz)
 depends=zlib
 
 build() {
