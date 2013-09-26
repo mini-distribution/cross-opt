@@ -2,7 +2,7 @@
 # URL: http://gstreamer.freedesktop.org
 
 name=gst-plugins-base
-version=1.0.10
+version=1.2.0
 release=1
 source=(http://gstreamer.freedesktop.org/src/gst-plugins-base/$name-$version.tar.xz)
 depends=(gstreamer alsa-lib orc)
