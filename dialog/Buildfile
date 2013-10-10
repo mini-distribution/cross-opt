@@ -1,5 +1,6 @@
 # Description: A tool to display dialog boxes from shell scripts
-# URL: http://hightek.org/dialog/
+# URL: http://hightek.org/dialog
+# License: LGPLv2
 
 name=dialog
 version=1.2-20130902

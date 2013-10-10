@@ -1,5 +1,6 @@
 # Description: Packet capture library
-# URL:         http://www.tcpdump.org
+# URL: http://www.tcpdump.org
+# License: BSD
 
 name=libpcap
 version=1.4.0

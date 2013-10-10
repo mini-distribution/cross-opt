@@ -1,5 +1,6 @@
-# Description: Describe the build here
-# URL: http://www.something.com
+# Description: FFMPEG-based plug-in containing many decoders and encoders
+# URL: http://gstreamer.freedesktop.org
+# License: LGPLv2+
 
 name=gst-ffmpeg-0.10
 version=0.10.13

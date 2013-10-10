@@ -1,5 +1,6 @@
-# Description: Library of PNG support functions
-# URL: http://www.libpng.org
+# Description: Mobile broadband settings for different service providers
+# URL: https://git.gnome.org/browse/mobile-broadband-provider-info
+# License: PD
 
 name=mobile-broadband-provider-info
 version=git-eaf82e5f14

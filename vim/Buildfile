@@ -1,5 +1,6 @@
 # Description: Highly configurable text editor
-# URL:         http://www.vim.org/
+# URL: http://www.vim.org
+# License: VIM
 
 name=vim
 version=7.4

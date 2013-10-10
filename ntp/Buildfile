@@ -1,5 +1,6 @@
 # Description: Network Time Protocol software
 # URL: http://www.ntp.org
+# License: MIT BSD GPLv2
 
 name=ntp
 version=4.2.6p5

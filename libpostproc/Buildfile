@@ -1,5 +1,6 @@
-# Description: Describe the build here
-# URL: http://www.something.com
+# Description: Video post process library
+# URL: http://git.videolan.org/?p=libpostproc.git
+# License: GPLv2+
 
 name=libpostproc
 version=3b7053f

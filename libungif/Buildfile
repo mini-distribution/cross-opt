@@ -1,5 +1,6 @@
 # Description: An uncompressed GIF library compatible with giflib
-# URL: http://libungif.sourceforge.net/doc/
+# URL: http://directory.fsf.org/wiki/Libungif
+# License: X11
 
 name=libungif
 version=4.1.4

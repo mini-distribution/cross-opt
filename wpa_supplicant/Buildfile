@@ -1,5 +1,6 @@
 # Description: User space IEEE 802.1X/WPA supplicant (wireless client) 
-# URL: http://hostap.epitest.fi/wpa_supplicant/
+# URL: http://hostap.epitest.fi/wpa_supplicant
+# License: BSD
 
 name=wpa_supplicant
 version=2.0

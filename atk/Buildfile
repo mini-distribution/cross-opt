@@ -1,5 +1,6 @@
 # Description: A set of interfaces for accessibility
-# URL: http://developer.gnome.org/atk/
+# URL: http://developer.gnome.org/atk
+# License: LGPLv2+
 
 name=atk
 version=2.8.0

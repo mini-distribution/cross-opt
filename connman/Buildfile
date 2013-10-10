@@ -1,5 +1,6 @@
 # Description: Open source connection mananger
-# URL: http://connman.net/
+# URL: http://connman.net
+# License: GPLv2
 
 name=connman
 version=1.18

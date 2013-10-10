@@ -1,5 +1,6 @@
 # Description: Official Linux Bluetooth protocol stack
 # URL: https://www.bluez.org
+# License: GPLv2+
 
 name=bluez
 version=5.8

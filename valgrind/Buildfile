@@ -1,5 +1,6 @@
 # Description: Valgrind is an instrumentation framework for building dynamic analysis tools
-# URL: http://valgrind.org/
+# URL: http://valgrind.org
+# License: GPLv2
 
 name=valgrind
 version=3.8.1

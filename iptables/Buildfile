@@ -1,5 +1,6 @@
 # Description: A Linux kernel packet filter control tool
-# URL: http://www.iptables.org/
+# URL: http://www.iptables.org
+# License: GPLv2
 
 name=iptables
 version=1.4.19.1

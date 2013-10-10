@@ -1,5 +1,6 @@
 # Description: Tools to configure and manipulate wlan devices
 # URL: http://www.hpl.hp.com/personal/Jean_Tourrilhes/Linux/Tools.html
+# License: GPLv2
 
 name=wireless_tools
 version=29

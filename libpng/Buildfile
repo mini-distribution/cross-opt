@@ -1,5 +1,6 @@
 # Description: Library of PNG support functions
 # URL: http://www.libpng.org
+# License: ZLIB
 
 name=libpng
 version=1.6.6

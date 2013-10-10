@@ -1,5 +1,6 @@
 # Description: Secure, fast, compliant and very flexible web server
-# URL: http://www.lighttpd.net/
+# URL: http://www.lighttpd.net
+# License: BSD
 
 name=lighttpd
 version=1.4.32

@@ -1,5 +1,6 @@
-# Description: Describe the build here
-# URL: http://www.something.com
+# Description: Open source audio and video processing tools
+# URL: http://libav.org
+# License: LGPLv2.1+ GPLv2+
 
 name=libav
 version=9.9

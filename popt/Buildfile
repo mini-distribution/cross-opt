@@ -1,5 +1,6 @@
 # Description: Popt is a C library for parsing command line parameters.
-# URL: http://rpm5.org/files/popt/
+# URL: http://rpm5.org/files/popt
+# License: MIT
 
 name=popt
 version=1.16

@@ -1,5 +1,6 @@
 # Description: Open Source Telephony
 # URL: https://ofono.org
+# License: GPLv2
 
 name=ofono
 version=1.12

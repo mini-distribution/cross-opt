@@ -1,5 +1,6 @@
 # Description: Open source implementation of the icalendar format
-# URL: http://sourceforge.net/projects/freeassociation/
+# URL: http://sourceforge.net/projects/freeassociation
+# License: LGPLv2 MPLv1.1
 
 name=libical
 version=1.0

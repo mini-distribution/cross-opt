@@ -1,5 +1,6 @@
 # Description: TIFF Library and Utilities
-# URL: http://www.libtiff.org/
+# URL: http://www.libtiff.org
+# License: LIBTIFF
 
 name=libtiff
 version=4.0.3

@@ -1,6 +1,6 @@
 # Description: TCP and UDP bandwidth performance measurement tool
-# URL: http://sourceforge.net/projects/iperf/
-# License: UI license
+# URL: http://sourceforge.net/projects/iperf
+# License: BSD
 
 name=iperf
 version=2.0.5

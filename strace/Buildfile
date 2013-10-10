@@ -1,5 +1,6 @@
 # Description: strace is a system call tracer
-# URL: http://sourceforge.net/projects/strace/
+# URL: http://sourceforge.net/projects/strace
+# License: BSD
 
 name=strace
 version=4.8

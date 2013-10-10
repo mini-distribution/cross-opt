@@ -1,5 +1,6 @@
 # Description: Very high-quality data compression program
-# URL: http://www.bzip.org/
+# URL: http://www.bzip.org
+# License: BSD
 
 name=bzip2
 version=1.0.6

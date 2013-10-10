@@ -1,5 +1,6 @@
 # Description: Network sniffer with command line interface
-# URL:         http://www.tcpdump.org
+# URL: http://www.tcpdump.org
+# License: BSD
 
 name=tcpdump
 version=4.4.0

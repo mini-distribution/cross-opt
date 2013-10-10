@@ -1,5 +1,6 @@
 # Description: Fast console MPEG Audio Player and decoder library
-# URL: http://www.mpg123.de/
+# URL: http://www.mpg123.de
+# License: LGPLv2.1
 
 name=mpg123
 version=1.15.4

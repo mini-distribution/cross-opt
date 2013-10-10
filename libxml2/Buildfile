@@ -1,5 +1,6 @@
 # Description: XML library version 2
 # URL: http://xmlsoft.org
+# License: MIT
 
 name=libxml2
 version=2.9.1

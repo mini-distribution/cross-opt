@@ -1,5 +1,6 @@
 # Description: ORC is a library and simple set of tools for compiling and executing simple programs.
-# URL: http://code.entropywave.com/orc/
+# URL: http://code.entropywave.com/orc
+# License: BSD
 
 name=orc
 version=0.4.18

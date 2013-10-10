@@ -1,5 +1,6 @@
 # Description: GNU Midnight Commander
-# URL:         http://www.midnight-commander.org
+# URL: http://www.midnight-commander.org
+# License: GPLv2
 
 name=mc
 version=4.8.9

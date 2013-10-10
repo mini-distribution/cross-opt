@@ -1,5 +1,6 @@
 # Description: A library for configuring and customizing font access
 # URL: http://fontconfig.org
+# License: MIT
 
 name=fontconfig
 version=2.10.2

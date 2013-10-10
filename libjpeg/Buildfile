@@ -1,5 +1,6 @@
-# Description: Library of PNG support functions
-# URL: http://www.ijg.org/
+# Description: Library for JPEG image compression
+# URL: http://www.ijg.org
+# License: LIBJPEG
 
 name=libjpeg
 version=9a
