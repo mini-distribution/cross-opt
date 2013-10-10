@@ -1,0 +1,22 @@
+# Description: TCP and UDP bandwidth performance measurement tool
+# URL: http://sourceforge.net/projects/iperf/
+# License: UI license
+
+name=iperf
+version=2.0.5
+release=1
+source=(http://surfnet.dl.sourceforge.net/project/iperf/iperf-$version.tar.gz)
+depends=(util-linux)
+
+build() {
+   cd $name-$version
+
+   ac_cv_func_malloc_0_nonnull=yes \
+   ./configure --prefix=/usr  \
+               --host=$HOST   \
+               --build=$BUILD
+
+   make -j$JOBS
+
+   make DESTDIR=$PKG install
+}
