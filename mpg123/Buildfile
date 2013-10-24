@@ -3,7 +3,7 @@
 # License: LGPLv2.1
 
 name=mpg123
-version=1.15.4
+version=1.16.0
 release=1
 source=(http://surfnet.dl.sourceforge.net/project/$name/$name/$version/$name-$version.tar.bz2)
 depends=()
