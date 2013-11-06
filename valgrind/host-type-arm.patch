@@ -1,7 +1,7 @@
-diff -Nurp a/configure.in b/configure.in
---- a/configure.in	2013-03-25 16:48:34.605522549 +0100
-+++ b/configure.in	2013-03-25 16:48:54.093285099 +0100
-@@ -186,7 +186,7 @@ case "${host_cpu}" in
+diff -Nurp a/configure.ac b/configure.ac
+--- a/configure.ac	2013-03-25 16:48:34.605522549 +0100
++++ b/configure.ac	2013-03-25 16:48:54.093285099 +0100
+@@ -190,7 +190,7 @@ case "${host_cpu}" in
          ARCH_MAX="s390x"
          ;;
  

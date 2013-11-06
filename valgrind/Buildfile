@@ -3,16 +3,15 @@
 # License: GPLv2
 
 name=valgrind
-version=3.8.1
+version=3.9.0
 release=1
 source=(http://valgrind.org/downloads/$name-$version.tar.bz2
-        host-type-arm.patch glibc-2-17.patch)
+        host-type-arm.patch)
 
 build() {
    cd $name-$version
 
    patch -p1 < $SRC/host-type-arm.patch
-   patch -p1 < $SRC/glibc-2-17.patch
 
    ./autogen.sh NOCONFIGURE=1
 
