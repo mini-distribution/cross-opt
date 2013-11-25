@@ -35,12 +35,11 @@ build() {
                --disable-tist \
                --disable-nmcompat \
                --disable-polkit \
-               --with-systemdunitdir= \
                ac_cv_path_WPASUPPLICANT=/usr/sbin/wpa_supplicant
 
    make -j $JOBS
    make DESTDIR=$PKG install
 
    install -D -m 0755 client/connmanctl $PKG/usr/bin/connmanctl
-   install -D -m 0644 $SRC/connman.service $PKG/etc/systemd/system/connman.service
+   install -D -m 0644 src/main.conf $PKG/etc/connman/main.conf
 }
