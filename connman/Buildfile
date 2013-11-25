@@ -22,7 +22,7 @@ build() {
                --enable-datafiles \
                --enable-shared \
                --enable-wifi \
-               --disable-bluetooth \
+               --enable-bluetooth \
                --disable-hh2serial-gps \
                --disable-ofono \
                --disable-openconnect \
