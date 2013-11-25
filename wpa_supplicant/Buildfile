@@ -21,6 +21,8 @@ build () {
    echo "CONFIG_CTRL_IFACE_DBUS_INTRO=y" >> .config
    echo "CONFIG_CTRL_IFACE=y" >> .config
    echo "CONFIG_LIBNL32=y" >> .config
+   echo "CONFIG_AP=y" >> .config
+   echo "CONFIG_P2P=y" >> .config
 
    CFLAGS="-I$SYSROOT/usr/include/libnl3" \
    make -j $JOBS CC="$HOST-gcc"
