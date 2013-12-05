@@ -15,6 +15,7 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
+               --sysconfdir=/etc \
                --enable-ethernet \
                --enable-loopback \
                --enable-client \
