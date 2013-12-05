@@ -1,0 +1,26 @@
+# Description: hostapd is a user space daemon for access point and authentication servers.
+# URL: http://w1.fi/hostapd/
+# License: BSD
+
+name=hostapd
+version=2.0
+release=1
+source=(http://w1.fi/releases/$name-$version.tar.gz)
+depends=(libnl openssl)
+
+build() {
+   cd $name-$version/hostapd
+
+   cp defconfig .config
+
+   echo "CONFIG_LIBNL32=y" >> .config
+
+   CFLAGS="-I$SYSROOT/usr/include/libnl3 -MMD -O2 -Wall -g" \
+   LDFLAGS="-L$SYSROOT/usr/lib/libnl3"\
+   make -j$JOBS CC="$HOST-gcc"
+
+   mkdir -p $PKG/usr/bin
+   mkdir -p $PKG/etc/hostapd
+   install {hostapd,hostapd_cli} $PKG/usr/bin
+   install -m644 hostapd.conf $PKG/etc/hostapd
+}
