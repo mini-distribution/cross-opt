@@ -1,0 +1,15 @@
+# Description: rfkill is a small userspace tool to query the state of the rfkill switches.
+# URL: http://wireless.kernel.org/en/users/Documentation/rfkill
+# Licence: MIT
+
+name=rfkill
+version=0.5
+release=1
+source=(https://www.kernel.org/pub/software/network/rfkill/rfkill-0.5.tar.xz)
+
+build() {
+   cd $name-$version
+
+   make CC=$HOST-gcc
+   make DESTDIR=$PKG install
+}
