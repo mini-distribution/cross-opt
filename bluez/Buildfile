@@ -14,10 +14,13 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
-               --disable-usb
+               --enable-library \
+               --enable-test
 
    make -j $JOBS
    make DESTDIR=$PKG install
+
+   install -D $SRC/$name-$version/attrib/gatttool $PKG/usr/bin/gatttool
 
    # Fix libtool files
    fix_la_files $PKG
