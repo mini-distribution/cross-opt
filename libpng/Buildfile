@@ -3,9 +3,9 @@
 # License: ZLIB
 
 name=libpng
-version=1.6.6
+version=1.6.7
 release=1
-source=(http://switch.dl.sourceforge.net/project/$name/libpng16/$version/$name-$version.tar.xz)
+source=(ftp://ftp.simplesystems.org/pub/libpng/png/src/history/libpng16/$name-$version.tar.xz)
 depends=zlib
 
 build() {
