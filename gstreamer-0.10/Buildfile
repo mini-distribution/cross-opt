@@ -1,6 +1,6 @@
 # Description: Library for constructing graphs of media-handling components
 # URL: http://gstreamer.freedesktop.org
-# License: LGPLv2+
+# License: LGPLv2
 
 name=gstreamer-0.10
 version=0.10.36

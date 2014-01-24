@@ -1,6 +1,6 @@
 # Description: A free and portable TrueType font rendering engine
 # URL: http://www.freetype.org
-# License: FTL GPLv2+
+# License: FTL GPLv2
 
 name=freetype
 version=2.5.0.1

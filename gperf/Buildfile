@@ -1,6 +1,6 @@
 # Description: Perfect hash function generator
 # URL: http://www.gnu.org/software/gperf
-# License: GPLv3+
+# License: GPLv3
 
 name=gperf
 version=3.0.4

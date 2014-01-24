@@ -1,6 +1,6 @@
 # Description: A tool to trace the route of ip packets
 # URL: ftp://ftp.ee.lbl.gov
-# License: GPLv2+
+# License: GPLv2
 
 name=traceroute
 version=2.0.19

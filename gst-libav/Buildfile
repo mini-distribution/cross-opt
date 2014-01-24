@@ -1,6 +1,6 @@
 # Description: Libav-based plug-in containing many decoders and encoders
 # URL: http://gstreamer.freedesktop.org
-# License: LGPLv2+
+# License: LGPLv2
 
 name=gst-libav
 version=1.2.1

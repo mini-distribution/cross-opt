@@ -1,6 +1,6 @@
 # Description: gst-rtsp-server is a library ion top of GStreamer for building an RTSP server 
-# URL: http://cgit.freedesktop.org/gstreamer/gst-rtsp-server/
-# License: LGPLv2+
+# URL: http://cgit.freedesktop.org/gstreamer/gst-rtsp-server
+# License: LGPLv2
 
 name=gst-rtsp-server
 version=git-9387c4b4

@@ -1,6 +1,6 @@
 # Description: The GNU Debugger (GDB)
 # URL: http://sources.redhat.com/gdb
-# License: GPLv3+ GPLv2+ GFDL PD BSD LGPLv2+
+# License: GPLv3 GPLv2 GFDL PD BSD LGPLv2
 
 name=gdb
 version=7.6.1

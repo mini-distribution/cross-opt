@@ -1,6 +1,6 @@
 # Description: A low-level cryptographic library
 # URL: http://www.lysator.liu.se/~nisse/nettle
-# License: LGPLv2.1+
+# License: LGPLv2.1
 
 name=nettle
 version=2.7.1
