@@ -16,7 +16,7 @@ build() {
                --prefix=/usr \
                --disable-bluetooth
 
-   make
+   make -j $JOBS
    make DESTDIR=$PKG install
 
    # Fix libtool files
