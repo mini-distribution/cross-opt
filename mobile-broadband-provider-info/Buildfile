@@ -1,15 +1,16 @@
-# Description: Mobile broadband settings for different service providers
+# Description: Mobile broadband settings for various service providers
 # URL: https://git.gnome.org/browse/mobile-broadband-provider-info
 # License: PD
 
 name=mobile-broadband-provider-info
-version=git-eaf82e5f14
+version=f7b74ea9a6
 release=1
-source=(http://buildgear.org/mirror/$name-$version.tar.xz)
+source=(https://git.gnome.org/browse/mobile-broadband-provider-info/snapshot/$name-$version.tar.gz)
 
 build() {
    cd $name-$version
 
+   ./autogen.sh
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr
