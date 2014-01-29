@@ -3,16 +3,13 @@
 # License: GPLv2
 
 name=ofono
-version=1.12
+version=1.14
 release=1
-source=(https://www.kernel.org/pub/linux/network/ofono/$name-$version.tar.xz
-        ofono-ssize-type-fix.patch)
+source=(https://www.kernel.org/pub/linux/network/ofono/$name-$version.tar.xz)
 depends=(systemd glib dbus mobile-broadband-provider-info)
 
 build() {
    cd $name-$version
-
-   patch -p1 < $SRC/ofono-ssize-type-fix.patch
 
    ./configure --build=$BUILD \
                --host=$HOST \
