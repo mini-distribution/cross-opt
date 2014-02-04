@@ -15,7 +15,11 @@ build() {
                --host=$HOST \
                --prefix=/usr \
                --enable-library \
-               --enable-test
+               --enable-test \
+               --enable-systemd \
+               --disable-test \
+               --disable-cups \
+               --with-systemdsystemunitdir=/etc/systemd/system
 
    make -j $JOBS
    make DESTDIR=$PKG install
