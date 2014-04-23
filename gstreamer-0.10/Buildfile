@@ -16,6 +16,10 @@ build() {
                --prefix=/usr \
                --disable-{examples,tests,loadsave}
 
+   if bison -V | head -1 | fgrep -q " 3." ; then
+      sed -i  -e '/YYLEX_PARAM/d' -e '/parse-param.*scanner/i %lex-param { void *scanner }' gst/parse/grammar.y
+   fi
+
    make -j $JOBS
    make DESTDIR=$PKG install
 
