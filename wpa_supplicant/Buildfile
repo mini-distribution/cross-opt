@@ -3,7 +3,7 @@
 # License: BSD
 
 name=wpa_supplicant
-version=2.0
+version=2.1
 release=1
 source=(http://hostap.epitest.fi/releases/$name-$version.tar.gz
         wpa_supplicant.service
