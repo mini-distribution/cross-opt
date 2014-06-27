@@ -3,9 +3,9 @@
 # License: BSD
 
 name=orc
-version=0.4.19
+version=0.4.21
 release=1
-source=(http://gstreamer.freedesktop.org/src/orc/orc-$version.tar.gz)
+source=(http://gstreamer.freedesktop.org/src/orc/orc-$version.tar.xz)
 
 build() {
    cd $name-$version
