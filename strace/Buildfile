@@ -5,7 +5,7 @@
 name=strace
 version=4.8
 release=1
-source=(http://surfnet.dl.sourceforge.net/project/$name/$name/$version/$name-$version.tar.xz)
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.xz)
 
 build() {
    cd $name-$version
