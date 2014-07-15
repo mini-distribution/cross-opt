@@ -3,22 +3,27 @@
 # License: GPLv3
 
 name=readline
-version=6.2
+version=6.3
 release=1
 source=(http://ftp.gnu.org/gnu/$name/$name-$version.tar.gz \
-        readline62-001 readline62-002 inputrc \
-        http://ftp.gnu.org/gnu/readline/readline-6.2-patches/readline62-003 \
-        http://ftp.gnu.org/gnu/readline/readline-6.2-patches/readline62-004)
+        inputrc \
+        http://ftp.gnu.org/gnu/readline/readline-6.3-patches/readline63-001 \
+        http://ftp.gnu.org/gnu/readline/readline-6.3-patches/readline63-002 \
+        http://ftp.gnu.org/gnu/readline/readline-6.3-patches/readline63-003 \
+        http://ftp.gnu.org/gnu/readline/readline-6.3-patches/readline63-004 \
+        http://ftp.gnu.org/gnu/readline/readline-6.3-patches/readline63-005 \
+        http://ftp.gnu.org/gnu/readline/readline-6.3-patches/readline63-006)
 depends=(ncurses)
 
 build() {
    cd $name-$version
 
-   cat $SRC/readline62-??? | patch -p0
+   cat $SRC/readline63-??? | patch -p0
 
    # Don't use rpath for linking the shared libs
    sed -i '117s/-Wl,-rpath,$(libdir)//' support/shobj-conf
 
+   bash_cv_wcwidth_broken=no \
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
