@@ -3,9 +3,9 @@
 # License: GPLv2
 
 name=mc
-version=4.8.9
+version=4.8.12
 release=1
-source=(ftp://ftp.midnight-commander.org/pub/midnightcommander/$name-$version.tar.xz)
+source=(http://ftp.midnight-commander.org/mc-$version.tar.xz)
 depends=(ncurses glib)
 
 build () {
