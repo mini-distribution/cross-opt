@@ -3,7 +3,7 @@
 # License: ZLIB
 
 name=libpng
-version=1.6.7
+version=1.6.9
 release=1
 source=(ftp://ftp.simplesystems.org/pub/libpng/png/src/history/libpng16/$name-$version.tar.xz)
 depends=zlib
