@@ -7,11 +7,12 @@ version=1.24
 release=1
 source=(http://www.kernel.org/pub/linux/network/connman/$name-$version.tar.xz
         connman.service)
-depends=(glib dbus iptables gnutls readline wpa_supplicant systemd)
+depends=(glib dbus iptables gnutls readline ncurses wpa_supplicant systemd)
 
 build() {
    cd $name-$version
 
+   LIBS=-lncurses \
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
