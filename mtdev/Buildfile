@@ -1,0 +1,24 @@
+# Description: Multitouch protocol translation library
+# URL: http://bitmath.org/code/mtdev
+# License: MIT
+
+name=mtdev
+version=1.1.5
+release=1
+source=(http://bitmath.org/code/mtdev/$name-$version.tar.bz2)
+depends=
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
