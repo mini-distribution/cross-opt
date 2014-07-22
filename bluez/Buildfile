@@ -14,8 +14,8 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
+               --disable-static \
                --enable-library \
-               --enable-test \
                --enable-systemd \
                --disable-test \
                --disable-cups \
