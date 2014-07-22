@@ -19,6 +19,7 @@ build() {
    make DESTDIR=$PKG install
 
    rm -r $PKG/usr/share
+   rm $PKG/usr/lib/*.a
 
    # Fix libtool files
    fix_la_files $PKG
