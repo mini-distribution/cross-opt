@@ -27,11 +27,12 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
+               --disable-static \
                --with-curses
 
    make -j $JOBS SHLIB_LIBS=-lncurses
    make DESTDIR=$PKG install
 
    install -D -m 644 $SRC/inputrc $PKG/etc/inputrc
-   rm -r $PKG/usr/share/info
+   rm -r $PKG/usr/share/{info,doc}
 }
