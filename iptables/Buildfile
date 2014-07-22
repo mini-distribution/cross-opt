@@ -13,8 +13,9 @@ build () {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
+               --disable-static \
                --libexecdir=/usr/lib \
-               --enable-libipq \
+               --enable-libipq
 
    make -j $JOBS
    make DESTDIR=$PKG install
