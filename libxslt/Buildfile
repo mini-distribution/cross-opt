@@ -17,6 +17,7 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
+               --disable-static \
                --without-debug \
                --without-crypto \
                --without-python \
