@@ -12,7 +12,9 @@ build() {
 
    ./configure --prefix=/usr  \
                --host=$HOST   \
-               --build=$BUILD
+               --build=$BUILD \
+               --disable-static \
+               --disable-nls
 
    make -j$JOBS
    make DESTDIR=$PKG install
