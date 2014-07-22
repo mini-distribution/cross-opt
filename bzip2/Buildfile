@@ -19,4 +19,6 @@ build() {
 
   make -f Makefile-libbz2_so CC=$HOST-gcc AR=$HOST-ar RANLIB=$HOST-ranlib
   make -f Makefile-libbz2_so PREFIX=$PKG/usr install
+
+  rm $PKG/usr/lib/libbz2.a
 }
