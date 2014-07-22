@@ -3,12 +3,12 @@
 # License: BSD
 
 name=libpcap
-version=1.5.3
+version=1.6.1
 release=1
 source=(http://www.tcpdump.org/release/$name-$version.tar.gz)
 depends=(libusb)
-build ()
-{
+
+build () {
     cd $name-$version
 
     install -d $PKG/usr/bin
@@ -20,6 +20,7 @@ build ()
                 --without-libnl
 
     make -j $JOBS
-
     make DESTDIR=$PKG install install-shared
+
+    rm $PKG/usr/lib/libpcap.a
 }
