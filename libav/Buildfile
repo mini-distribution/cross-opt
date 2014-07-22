@@ -16,6 +16,7 @@ build() {
                --enable-cross-compile  \
                --target-os=linux       \
                --arch=arm              \
+               --disable-static        \
                --enable-gpl            \
                --enable-shared         \
                --disable-filters       \
