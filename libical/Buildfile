@@ -14,9 +14,10 @@ build() {
    libtoolize -f
    ./configure --build=$BUILD \
                --host=$HOST \
-               --prefix=/usr
+               --prefix=/usr \
+               --disable-static
 
-   make
+   make -j $JOBS
    make DESTDIR=$PKG install
 
    # Fix libtool files
