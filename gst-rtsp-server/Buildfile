@@ -3,14 +3,13 @@
 # License: LGPLv2
 
 name=gst-rtsp-server
-version=git-9387c4b4
+version=1.4.0
 release=1
-source=(http://www.buildgear.org/mirror/$name-$version.tar.gz)
+source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
 depends=(glib gstreamer gst-plugins-base)
 
 build()
 {
-    
     cd $name-$version
 
     ./configure --host=$HOST --prefix=/usr
@@ -21,5 +20,4 @@ build()
 
     # Fix installed la files
     fix_la_files $PKG
-   
 }

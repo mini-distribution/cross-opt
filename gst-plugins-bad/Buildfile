@@ -3,10 +3,10 @@
 # License: LGPLv2
 
 name=gst-plugins-bad
-version=1.2.4
+version=1.4.0
 release=1
 source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
-depends=(gstreamer gst-plugins-base orc)
+depends=(gstreamer gst-plugins-base orc nettle)
 
 build() {
    cd $name-$version
