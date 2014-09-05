@@ -14,7 +14,8 @@ build() {
                 --host=$HOST \
                 --prefix=/usr \
                 --disable-ipv6 \
-                ac_cv_linux_vers=2
+                ac_cv_linux_vers=2 \
+                PCAP_CONFIG=$SYSROOT/usr/bin/pcap-config
 
     make -j $JOBS
     make DESTDIR=$PKG install
