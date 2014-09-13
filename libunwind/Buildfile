@@ -1,0 +1,23 @@
+# Description: Call-chain API library
+# URL: http://www.nongnu.org/libunwind
+# License: MIT
+
+name=libunwind
+version=1.1
+release=1
+source=(http://download.savannah.gnu.org/releases/$name/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
