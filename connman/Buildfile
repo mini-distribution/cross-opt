@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=connman
-version=1.24
+version=1.25
 release=1
 source=(http://www.kernel.org/pub/linux/network/connman/$name-$version.tar.xz
         connman.service)
