@@ -16,7 +16,7 @@ build() {
                --disable-minidebuginfo \
                --disable-static
 
-   make -j 1
+   make -j $JOBS
    make DESTDIR=$PKG install
 
    # Fix libtool files
