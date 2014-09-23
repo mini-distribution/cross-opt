@@ -13,9 +13,10 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
+               --disable-minidebuginfo \
                --disable-static
 
-   make -j $JOBS
+   make -j 1
    make DESTDIR=$PKG install
 
    # Fix libtool files
