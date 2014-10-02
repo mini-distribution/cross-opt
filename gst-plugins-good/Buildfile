@@ -14,6 +14,8 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
+               --disable-nls \
+               --disable-gtk-doc \
                --disable-oss4 \
                --disable-oss \
                --disable-gst-v4l2 \
@@ -21,7 +23,7 @@ build() {
    make -j $JOBS
    make DESTDIR=$PKG install
 
-   rm -r $PKG/usr/share/locale
+   rm -r $PKG/usr/share/gtk-doc
 
    # Fix libtool files
    fix_la_files $PKG
