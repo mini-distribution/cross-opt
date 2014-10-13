@@ -1,0 +1,19 @@
+# Description: libcli emulates a cisco style telnet command-line interface.
+# URL: https://github.com/dparrish/libcli
+# License: GPLV2
+
+name=libcli
+version=1.9.7
+release=1
+source=(https://github.com/dparrish/libcli/archive/v$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   make -j $JOBS CC=$HOST-gcc AR=$HOST-ar
+   make DESTDIR=$PKG PREFIX=/usr install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
+
