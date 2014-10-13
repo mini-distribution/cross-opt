@@ -1,0 +1,20 @@
+# Description: iw is a new nl80211 based CLI configuration utility for wireless devices
+# URL: http://wireless.kernel.org/en/users/Documentation/iw
+# License: BSD
+
+name=iw
+version=3.17
+release=1
+source=(https://www.kernel.org/pub/software/network/iw/$name-$version.tar.gz)
+depends=(libnl)
+
+build () {
+   cd $name-$version/
+
+   make -j $JOBS CC="$HOST-gcc"
+
+   make DESTDIR=$PKG PREFIX=/usr install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
