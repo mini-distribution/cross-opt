@@ -1,0 +1,22 @@
+# Description: userspace RCU (read-copy-update) library.
+# URL: http://urcu.so/
+# License: LGPLv2.1
+
+name=liburcu
+version=0.6.7
+release=1
+source=(http://lttng.org/files/bundles/20120220/userspace-rcu-0.6.7.tar.bz2)
+
+build () {
+    cd userspace-rcu-$version
+
+    ac_cv_func_malloc_0_nonnull=yes ./configure --build=$BUILD \
+                --host=$HOST \
+                --prefix=/usr \
+
+    make -j $JOBS
+    make DESTDIR=$PKG install
+
+    # Fix libtool files
+   fix_la_files $PKG
+}
