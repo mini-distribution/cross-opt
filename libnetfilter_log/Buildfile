@@ -1,0 +1,24 @@
+# Description: libnetfilter_log is a userspace library providing interface to packets that have been logged by the kernel packet filter.
+# URL: http://www.netfilter.org/projects/libnetfilter_log/index.html
+# License: GPLv2
+
+name=libnetfilter_log
+version=1.0.1
+release=1
+source=(http://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
+depends=(libnfnetlink)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --enable-shared
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
