@@ -1,0 +1,23 @@
+# Description: nfacct is the command line tool to create/retrieve/delete accounting objects.
+# URL: http://www.netfilter.org/projects/nfacct/index.html
+# License: GPLv2
+
+name=nfacct
+version=1.0.1
+release=1
+source=(http://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
+depends=(libmnl libnetfilter_acct)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

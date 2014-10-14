@@ -1,0 +1,23 @@
+# Description: v4l-utils
+# URL: http://git.linuxtv.org/cgit.cgi/v4l-utils.git/about/
+# License: GPLv2
+
+name=v4l-utils
+version=1.6.0
+release=1
+source=(http://linuxtv.org/downloads/$name/$name-$version.tar.bz2)
+depends=(libjpeg)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

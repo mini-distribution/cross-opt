@@ -1,0 +1,23 @@
+# Description: ulogd is a userspace logging daemon for netfilter/iptables related logging.
+# URL: http://www.netfilter.org/projects/ulogd/index.html
+# License: GPLv2
+
+name=ulogd
+version=2.0.4
+release=1
+source=(http://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
+depends=(libnfnetlink libmnl libnetfilter_log libnetfilter_conntrack libnetfilter_acct)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
