@@ -1,0 +1,23 @@
+# Description: libnfnetlink is the low-level library for netfilter related kernel/userspace communication.
+# URL: http://www.netfilter.org/projects/libnfnetlink/index.html
+# License: GPLv2
+
+name=libnfnetlink
+version=1.0.1
+release=1
+source=(http://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --enable-shared
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
