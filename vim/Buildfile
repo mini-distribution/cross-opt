@@ -38,7 +38,7 @@ build () {
     rm -r $PKG/usr/{man/man?/vimtutor*,share/vim/{tutor,macros}}
     rm $PKG/usr/share/vim/*/README.txt
     ln -sf vim $PKG/usr/bin/evim
-    ln -sf /bin/vi $PKG/usr/bin/vi
+    ln -sf vim $PKG/usr/bin/vi
     ln -sf vim.1.gz $PKG/usr/man/man1/ex.1.gz
     ln -sf vim.1.gz $PKG/usr/man/man1/vi.1.gz
     ln -sf vim.1.gz $PKG/usr/man/man1/rvim.1.gz
