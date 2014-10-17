@@ -1,4 +1,5 @@
-The mini-distribution "opt" buildfiles.
+The mini-distribution "opt" buildfile collection
+------------------------------------------------
 
 These buildfiles include optional features which can be added on top of the core buildfiles.
 
