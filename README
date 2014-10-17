@@ -1,0 +1,7 @@
+The mini-distribution "opt" buildfiles.
+
+These buildfiles include optional features which can be added on top of the core buildfiles.
+
+Buildfiles in this repository may depend on buildfiles in core and opt.
+
+All buildfiles in this repository are maintained on a regular basis.
