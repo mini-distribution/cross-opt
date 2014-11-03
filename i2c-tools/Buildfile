@@ -12,5 +12,4 @@ build()
    cd $name-$version
 
    make CC=$HOST-gcc KERNELVERSION=2.6.37 prefix=/usr sbindir=/usr/bin DESTDIR=$PKG install
-
 }
