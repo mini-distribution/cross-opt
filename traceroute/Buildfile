@@ -1,5 +1,5 @@
 # Description: A tool to trace the route of ip packets
-# URL: ftp://ftp.ee.lbl.gov
+# URL: http://traceroute.sourceforge.net
 # License: GPLv2
 
 name=traceroute
