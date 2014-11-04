@@ -10,6 +10,6 @@ source=(https://www.kernel.org/pub/software/network/rfkill/rfkill-0.5.tar.xz)
 build() {
    cd $name-$version
 
-   make CC=$HOST-gcc
+   make VERSION_SUFFIX=$release CC=$HOST-gcc
    make DESTDIR=$PKG install
 }
