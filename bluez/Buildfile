@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=bluez
-version=5.24
+version=5.25
 release=1
 source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)
 depends=(systemd glib dbus readline libusb libical)
