@@ -7,7 +7,7 @@ version=4.2.6p5
 release=1
 source=(http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/$name-$version.tar.gz
         ntp.conf ntpd.service)
-depends=openssl
+depends=(openssl libcap)
 
 build () {
    cd $name-$version
