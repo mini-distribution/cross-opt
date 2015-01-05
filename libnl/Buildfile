@@ -3,7 +3,7 @@
 # License: LGPLv2
 
 name=libnl
-version=3.2.24
+version=3.2.25
 release=1
 source=(http://www.infradead.org/~tgr/libnl/files/$name-$version.tar.gz)
 
