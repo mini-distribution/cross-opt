@@ -18,8 +18,8 @@ build () {
                --with-ncurses
 
    find -type f -name 'makefile' \
-        -exec sed -e "s|-I/usr|-I$SYSROOT/usr|g" \
-                  -e "s|-L/usr|-L$SYSROOT/usr|g" -i {} \;
+        -exec sed -e 's|-I/usr|-I$SYSROOT/usr|g' \
+                  -e 's|-L/usr|-L$SYSROOT/usr|g' -i {} \;
 
    make -j $JOBS
    make DESTDIR=$PKG install
