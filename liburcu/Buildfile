@@ -3,9 +3,9 @@
 # License: LGPLv2.1
 
 name=liburcu
-version=0.8.5
+version=0.8.6
 release=1
-source=(http://mirror.mini-distribution.io/userspace-rcu-$version.tar.xz)
+source=(http://www.lttng.org/files/urcu/userspace-rcu-$version.tar.bz2)
 
 build () {
     cd userspace-rcu-$version
