@@ -3,9 +3,9 @@
 # License: GPLv2
 
 name=ipset
-version=6.23
+version=6.24
 release=1
-source=(http://ipset.netfilter.org/$name-6.23.tar.bz2)
+source=(http://ipset.netfilter.org/$name-$version.tar.bz2)
 depends=(libmnl)
 
 build() {
