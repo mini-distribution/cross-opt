@@ -3,7 +3,7 @@
 # License: MIT BSD GPLv2
 
 name=ntp
-version=4.2.6p5
+version=4.2.8
 release=1
 source=(http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/$name-$version.tar.gz
         ntp.conf ntpd.service)
@@ -19,7 +19,8 @@ build () {
                --enable-debugging=no \
                --enable-ntpdate-step \
                --enable-parse-clocks \
-               --enable-all-clocks
+               --enable-all-clocks \
+               --with-yielding-select=yes
    make -j $JOBS
    make DESTDIR=$PKG install
 
