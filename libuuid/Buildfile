@@ -1,0 +1,23 @@
+# Description: Portable uuid C library
+# URL: http://sourceforge.net/projects/libuuid
+# License: GPLv2
+
+name=libuuid
+version=1.0.3
+release=1
+source=(http://downloads.sourceforge.net/libuuid/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
