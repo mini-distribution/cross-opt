@@ -1,0 +1,26 @@
+# Description: User space tracing library and utilities
+# URL: http://lttng.org
+# License: LGPLv2 GPLv2
+
+name=lttng-ust
+version=2.4.3
+release=1
+source=(http://lttng.org/files/lttng-ust/$name-$version.tar.bz2)
+depends=(liburcu)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share/doc
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
