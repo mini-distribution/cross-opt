@@ -1,0 +1,24 @@
+# Description: Tracing control daemons, libraries and interfaces 
+# URL: http://lttng.org
+# License: LGPLv2 GPLv2
+
+name=lttng-tools
+version=2.5.3
+release=1
+source=(http://lttng.org/files/lttng-tools/$name-$version.tar.bz2)
+depends=(popt libuuid liburcu lttng-ust libxml2)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static
+
+   make -j 1
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
