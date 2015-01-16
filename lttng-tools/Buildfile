@@ -19,6 +19,8 @@ build() {
    make -j $JOBS
    make DESTDIR=$PKG install
 
+   rm -r $PKG/usr/share/doc
+
    # Fix libtool files
    fix_la_files $PKG
 }
