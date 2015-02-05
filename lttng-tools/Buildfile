@@ -3,7 +3,7 @@
 # License: LGPLv2 GPLv2
 
 name=lttng-tools
-version=2.5.3
+version=2.6.0
 release=1
 source=(http://lttng.org/files/lttng-tools/$name-$version.tar.bz2)
 depends=(popt libuuid liburcu lttng-ust libxml2)
