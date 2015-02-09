@@ -1,0 +1,19 @@
+# Description: A unix communication package providing the XMODEM, YMODEM ZMODEM file transfer protocols.
+# URL: https://ohse.de/uwe/software/lrzsz.html
+# License: GPLv2
+
+name=lrzsz
+version=0.12.20
+release=1
+source=(https://ohse.de/uwe/releases/lrzsz-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   CC=$HOST-gcc ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+}
