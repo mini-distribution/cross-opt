@@ -1,0 +1,26 @@
+# Description: Network Mapper
+# URL: https://nmap.org/
+# License: LGPL
+
+name=nmap
+version=6.47
+release=1
+source=(https://nmap.org/dist/$name-$version.tar.bz2)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --with-liblua=included \
+               --with-libpcap=internal \
+               --with-pcap=linux \
+               --disable-static
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
