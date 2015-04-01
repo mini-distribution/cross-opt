@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=alsa-utils
-version=1.0.28
+version=1.0.29
 release=1
 source=(http://alsa.cybermirror.org/utils/$name-$version.tar.bz2)
 depends=(alsa-lib dialog systemd)
