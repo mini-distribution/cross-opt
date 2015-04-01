@@ -3,7 +3,7 @@
 # License: LGPLv2
 
 name=alsa-lib
-version=1.0.28
+version=1.0.29
 release=1
 source=(http://alsa.cybermirror.org/lib/$name-$version.tar.bz2)
 
