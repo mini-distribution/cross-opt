@@ -1,0 +1,23 @@
+# Description: cifs-utils provides a means for mounting SMB/CIFS shares on a Linux system.
+# URL: https://wiki.samba.org/index.php/LinuxCIFS_utils
+# License: GPLv3
+
+name=cifs-utils
+version=6.4
+release=1
+source=(https://ftp.samba.org/pub/linux-cifs/$name/$name-$version.tar.bz2)
+
+build()
+{
+   cd $name-$version
+
+   ac_cv_func_malloc_0_nonnull=yes \
+   ac_cv_func_realloc_0_nonnull=yes \
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --disable-pam \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+}
