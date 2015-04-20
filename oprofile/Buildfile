@@ -15,7 +15,6 @@ build() {
                --build=$BUILD    \
                --host=$HOST      \
                --disable-static  \
-               --enable-gui no   \
                --with-kernel=$NATIVE_SYSROOT/usr/src/linux
 
    make -j$JOBS
