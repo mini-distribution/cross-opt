@@ -6,7 +6,7 @@ name=oprofile
 version=1.0.0
 release=1
 source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz)
-depends=(popt which)
+depends=(popt which linux)
 
 build() {
    cd $name-$version
