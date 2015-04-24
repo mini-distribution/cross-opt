@@ -1,4 +1,4 @@
-# Description: User space IEEE 802.1X/WPA supplicant (wireless client) 
+# Description: User space IEEE 802.1X/WPA supplicant (wireless client)
 # URL: http://hostap.epitest.fi/wpa_supplicant
 # License: BSD
 
@@ -7,11 +7,17 @@ version=2.4
 release=1
 source=(http://hostap.epitest.fi/releases/$name-$version.tar.gz
         wpa_supplicant.service
-        wpa_supplicant.conf)
+        wpa_supplicant.conf
+        0001-P2P-Validate-SSID-element-length-before-copying-it-C.patch)
 depends=(openssl ncurses readline libnl dbus)
 
 build () {
-   cd $name-$version/$name
+
+   # Patch to CVE-2015-1863
+   cd $name-$version
+   patch -p1 -i $SRC/0001-P2P-Validate-SSID-element-length-before-copying-it-C.patch
+
+   cd $name
 
    cp defconfig .config
    echo "BINDIR=/usr/sbin" >> .config
