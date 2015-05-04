@@ -17,7 +17,7 @@ build() {
                --disable-nls
 
    make -j $JOBS
-   make DESTDIR=$PKG install
+   make DESTDIR=$PKG -C gdb install
 
    rm -rf $PKG/usr/share/info
 
