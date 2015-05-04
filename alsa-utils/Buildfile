@@ -11,7 +11,7 @@ depends=(alsa-lib dialog systemd)
 build() {
    cd $name-$version
 
-   LDFLAGS="-L$SYSROOT/usr/lib" \
+   LDFLAGS="-L$SYSROOT/usr/lib -ltinfo" \
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
