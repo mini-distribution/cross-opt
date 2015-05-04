@@ -3,7 +3,7 @@
 # License: GPLv3 GPLv2 GFDL PD BSD LGPLv2
 
 name=gdb
-version=7.8.2
+version=7.9
 release=1
 source=(ftp://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
 depends=ncurses
