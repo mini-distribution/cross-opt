@@ -6,14 +6,17 @@ name=valgrind
 version=3.10.1
 release=1
 source=(http://valgrind.org/downloads/$name-$version.tar.bz2
-        host-type-arm.patch)
+        host-type-arm.patch
+        valgrind-3.10.1-glibc_2.21-1.patch)
 
 build() {
    cd $name-$version
 
-   patch -p1 < $SRC/host-type-arm.patch
+   patch -p1 -i $SRC/host-type-arm.patch
 
    ./autogen.sh NOCONFIGURE=1
+
+   patch -p1 -i $SRC/valgrind-3.10.1-glibc_2.21-1.patch
 
    ./configure --prefix=/usr  \
                --host=$HOST   \
