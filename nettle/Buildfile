@@ -3,7 +3,7 @@
 # License: LGPLv2.1
 
 name=nettle
-version=2.7.1
+version=3.1.1
 release=1
 source=(ftp://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
 depends=(gmp)
