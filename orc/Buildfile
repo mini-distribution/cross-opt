@@ -3,7 +3,7 @@
 # License: BSD
 
 name=orc
-version=0.4.23
+version=0.4.24
 release=1
 source=(http://gstreamer.freedesktop.org/src/orc/orc-$version.tar.xz)
 
