@@ -3,7 +3,7 @@
 # License: MIT BSD GPLv2
 
 name=ntp
-version=4.2.8p2
+version=4.2.8p3
 release=1
 source=(http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/$name-$version.tar.gz
         ntp.conf ntpd.service)
