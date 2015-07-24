@@ -3,7 +3,7 @@
 # License: LGPLv2 GPLv2
 
 name=lttng-ust
-version=2.6.0
+version=2.6.2
 release=1
 source=(http://lttng.org/files/lttng-ust/$name-$version.tar.bz2)
 depends=(liburcu)

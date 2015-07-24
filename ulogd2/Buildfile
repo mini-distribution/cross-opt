@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=ulogd
-version=2.0.4
+version=2.0.5
 release=1
 source=(http://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
 depends=(libnfnetlink libmnl libnetfilter_log libnetfilter_conntrack libnetfilter_acct)

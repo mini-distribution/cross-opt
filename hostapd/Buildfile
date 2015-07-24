@@ -3,7 +3,7 @@
 # License: BSD
 
 name=hostapd
-version=2.3
+version=2.4
 release=1
 source=(http://w1.fi/releases/$name-$version.tar.gz)
 depends=(libnl openssl)
