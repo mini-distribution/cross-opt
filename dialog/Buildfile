@@ -15,7 +15,8 @@ build () {
                --host=$HOST \
                --prefix=/usr \
                --mandir=/usr/share/man \
-               --with-ncurses
+               --with-ncurses \
+               LDFLAGS="-ltinfo -lncurses"
 
    find -type f -name 'makefile' \
         -exec sed -e 's|-I/usr|-I$SYSROOT/usr|g' \
