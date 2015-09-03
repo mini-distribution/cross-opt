@@ -3,9 +3,9 @@
 # License: BSD
 
 name=lighttpd
-version=1.4.35
+version=1.4.37
 release=1
-source=(http://download.$name.net/$name/releases-1.4.x/$name-$version.tar.bz2 \
+source=(http://download.$name.net/$name/releases-1.4.x/$name-$version.tar.xz \
         $name.conf
         $name.service
         root_user.patch)
