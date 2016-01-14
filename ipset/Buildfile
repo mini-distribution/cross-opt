@@ -1,9 +1,9 @@
 # Description: IP sets are a framework inside the Linux 2.4.x and later kernel, which can be administered by the ipset utility. 
-# URL: http://www.netfilter.org/projects/ipset/index.html
+# URL: http://ipset.netfilter.org/
 # License: GPLv2
 
 name=ipset
-version=6.26
+version=6.27
 release=1
 source=(http://ipset.netfilter.org/$name-$version.tar.bz2)
 depends=(libmnl)
