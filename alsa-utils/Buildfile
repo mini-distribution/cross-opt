@@ -3,10 +3,10 @@
 # License: GPLv2
 
 name=alsa-utils
-version=1.0.29
+version=1.1.0
 release=1
-source=(http://alsa.cybermirror.org/utils/$name-$version.tar.bz2)
-depends=(alsa-lib dialog systemd)
+source=(ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2)
+depends=(alsa-lib dialog systemd fftw)
 
 build() {
    cd $name-$version
