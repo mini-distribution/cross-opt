@@ -1,0 +1,45 @@
+# Description: C subroutine library for computing discrete Fourier transform.
+# URL: http://www.fftw.org/
+
+name=fftw
+version=3.3.4
+release=1
+source=(http://www.fftw.org/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   local config="--build=$BUILD \
+                 --host=$HOST \
+                 --prefix=/usr \
+                 --enable-threads \
+                 --enable-shared \
+                 --with-gnu-ld"
+
+   # compiling long double precision library
+   ./configure $config \
+               --enable-long-double
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+   make clean
+
+   # compiling single precision library
+   ./configure $config \
+               --enable-single
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+   make clean
+
+   # compiling double precision library
+   ./configure $config
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
