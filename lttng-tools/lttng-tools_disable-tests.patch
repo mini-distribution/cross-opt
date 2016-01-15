@@ -1,0 +1,11 @@
+diff -Naur a/Makefile.am b/Makefile.am
+--- a/Makefile.am	2016-01-07 20:53:34.000000000 +0100
++++ b/Makefile.am	2016-01-15 17:17:17.409505978 +0100
+@@ -2,7 +2,6 @@
+ 
+ SUBDIRS = include \
+ 		  src \
+-		  tests \
+ 		  extras \
+ 		  doc
+ 

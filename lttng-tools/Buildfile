@@ -3,18 +3,23 @@
 # License: LGPLv2 GPLv2
 
 name=lttng-tools
-version=2.6.0
+version=2.7.1
 release=1
-source=(http://lttng.org/files/lttng-tools/$name-$version.tar.bz2)
+source=(http://lttng.org/files/lttng-tools/$name-$version.tar.bz2 \
+        lttng-tools_disable-tests.patch)
 depends=(popt libuuid liburcu lttng-ust libxml2)
 
 build() {
    cd $name-$version
 
+   patch -p1 -i $SRC/lttng-tools_disable-tests.patch
+
+   autoreconf --install
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
-               --disable-static
+               --disable-static \
+               --with-xml-prefix=$SYSROOT/usr
 
    make -j $JOBS
    make DESTDIR=$PKG install
@@ -23,4 +28,8 @@ build() {
 
    # Fix libtool files
    fix_la_files $PKG
+}
+
+check() {
+   check_tool autoreconf
 }
