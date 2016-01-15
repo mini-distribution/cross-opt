@@ -5,7 +5,7 @@
 name=lm-sensors
 version=3.4.0
 release=1
-source=(http://dl.lm-sensors.org/$name/releases/lm_sensors-$version.tar.bz2)
+source=(http://mirror.mini-distribution.io/$name-$version.tar.bz2)
 
 build()
 {
