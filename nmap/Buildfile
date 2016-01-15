@@ -3,7 +3,7 @@
 # License: LGPL
 
 name=nmap
-version=6.47
+version=7.01
 release=1
 source=(https://nmap.org/dist/$name-$version.tar.bz2)
 
