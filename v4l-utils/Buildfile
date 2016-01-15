@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=v4l-utils
-version=1.6.3
+version=1.8.1
 release=1
 source=(http://linuxtv.org/downloads/$name/$name-$version.tar.bz2)
 depends=(libjpeg)
