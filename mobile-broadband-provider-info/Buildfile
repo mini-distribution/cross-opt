@@ -3,7 +3,7 @@
 # License: PD
 
 name=mobile-broadband-provider-info
-version=f7b74ea9a6
+version=20151214
 release=1
 source=(https://git.gnome.org/browse/mobile-broadband-provider-info/snapshot/$name-$version.tar.gz)
 
