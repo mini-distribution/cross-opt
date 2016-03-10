@@ -1,0 +1,25 @@
+# Description: Library for encoding video streams H.264
+# URL: http://www.videolan.org/developers/x264.html
+# License: GNU GPL
+
+name=x264
+version=20160309-2245
+release=1
+source=(ftp://ftp.videolan.org/pub/videolan/$name/snapshots/$name-snapshot-20160309-2245-stable.tar.bz2)
+
+build() {
+   cd $name-snapshot-$version-stable/
+
+   ./configure --host=$HOST \
+               --disable-asm \
+               --cross-prefix=$HOST- \
+               --prefix=/usr \
+               --enable-static \
+               --enable-shared
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
