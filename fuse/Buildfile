@@ -1,0 +1,24 @@
+# Description: FUSE (Filesystem in Userspace) 
+# URL: https://sourceforge.net/projects/fuse/
+# License: GPLv2
+
+name=fuse
+version=2.9.5
+release=1
+source=(https://github.com/lib$name/lib$name/releases/download/fuse_2_9_5/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   ./configure --host=$HOST \
+               --disable-static \
+               --prefix=/usr \
+               --enable-lib \
+               --enable-util \
+               --disable-example
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/etc/
+}

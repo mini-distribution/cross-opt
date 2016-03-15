@@ -1,0 +1,25 @@
+# Description: read-write NTFS driver for Linux
+# URL: http://www.tuxera.com/community/open-source-ntfs-3g/
+# License: GPLv2
+
+name=ntfs-3g
+version=2015.3.14
+release=1
+source=(https://tuxera.com/opensource/ntfs-3g_ntfsprogs-2015.3.14.tgz)
+depends=(fuse)
+
+build() {
+   cd ntfs-3g_ntfsprogs-2015.3.14
+
+   ./configure --host=$HOST \
+               --prefix=/usr \
+               --libdir=/lib \
+               --disable-static \
+               --with-fuse=external \
+               --disable-ldconfig
+
+   make -j $JOBS DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
