@@ -1,0 +1,18 @@
+# Description: utilities for making and checking MS-DOS FAT filesystems
+# URL: https://github.com/dosfstools/dosfstools
+# License: GPLv2
+
+name=dosfstools
+version=3.0.28
+release=1
+source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   make CC=$HOST-gcc
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
