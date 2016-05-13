@@ -1,11 +1,11 @@
 # Description: Library for JPEG image compression
-# URL: http://www.ijg.org
+# URL: http://www.infai.org/jpeg/
 # License: LIBJPEG
 
 name=libjpeg
-version=9a
+version=9b
 release=1
-source=(http://buildgear.org/mirror/jpegsrc.v0$version.tar.gz)
+source=(http://mirror.mini-distribution.io/jpegsrc.v$version.tar.gz)
 
 build() {
 
