@@ -1,25 +1,30 @@
 # Description: Open source implementation of the icalendar format
-# URL: http://sourceforge.net/projects/freeassociation
+# URL: http://libical.github.io/libical/
 # License: LGPLv2 MPLv1.1
 
 name=libical
-version=1.0
+version=2.0.0
 release=1
-source=(http://downloads.sourceforge.net/project/freeassociation/libical/libical-1.0/$name-$version.tar.gz)
+source=(https://github.com/libical/libical/releases/download/v$version/libical-$version.tar.gz)
 depends=zlib
 
 build() {
    cd $name-$version
 
-   libtoolize -f
-   ./configure --build=$BUILD \
-               --host=$HOST \
-               --prefix=/usr \
-               --disable-static
+   mkdir build
+   cd build
+
+   export CC=$HOST-gcc
+   export CXX=$HOST-g++
+   cmake ../ -DCMAKE_INSTALL_PREFIX=/usr
 
    make -j $JOBS
    make DESTDIR=$PKG install
 
    # Fix libtool files
    fix_la_files $PKG
+}
+
+check() {
+   check_tool cmake
 }
