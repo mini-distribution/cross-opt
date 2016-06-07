@@ -1,0 +1,21 @@
+# Description: GL Demos
+# URL: ftp://ftp.freedesktop.org/pub/mesa/glu
+
+name=glu
+version=9.0.0
+release=1
+source=ftp://ftp.freedesktop.org/pub/mesa/$name/$name-$version.tar.bz2
+depends=(mesa)
+
+build() {
+   cd $name-$version
+
+   ./configure --prefix=/usr  \
+               --build=$BUILD \
+               --host=$HOST
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+
+   fix_la_files $PKG
+}

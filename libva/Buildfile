@@ -1,0 +1,21 @@
+# Description: libva is an implementation of VA-API for Linux
+# URL: http://freedesktop.org/wiki/Software/vaapi
+
+name=libva
+version=1.7.0
+release=1
+source=(http://www.freedesktop.org/software/vaapi/releases/$name/$name-$version.tar.bz2)
+depends=(libdrm)
+
+build() {
+   cd $name-$version
+
+   ./configure --prefix=/usr  \
+               --host=$HOST   \
+               --build=$BUILD
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+
+   fix_la_files $PKG
+}

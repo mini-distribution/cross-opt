@@ -1,0 +1,25 @@
+# Description: Wayland Protocol Library
+# URL: http://wayland.freedesktop.org
+
+name=wayland
+version=1.11.0
+release=1
+source=(http://wayland.freedesktop.org/releases/$name-$version.tar.xz)
+depends=(libffi expat libxml2 native/wayland)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static \
+               --disable-documentation \
+               --with-host-scanner
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

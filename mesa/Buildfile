@@ -1,0 +1,40 @@
+# Description: The Mesa 3D Graphics Library
+# URL: http://www.mesa3d.org
+# License: Mesa MIT Khronos
+
+name=mesa
+version=11.2.2
+release=1
+source=(ftp://ftp.freedesktop.org/pub/$name/$version/$name-$version.tar.gz)
+depends=(libdrm)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --enable-gles1 \
+               --enable-gles2 \
+               --enable-egl \
+               --enable-gallium-egl \
+               --enable-dri \
+               --disable-dri3 \
+               --disable-glx \
+               --with-gallium-drivers=swrast \
+               --with-egl-platforms=drm
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
+
+check() {
+   check_tool makedepend "Available in Ubuntu package xutils-dev"
+   check_tool python2
+   check_tool autoreconf
+   check_tool automake
+   check_tool aclocal
+}

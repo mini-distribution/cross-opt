@@ -1,0 +1,21 @@
+# Description: Pthread dummy library
+# URL: http://xcb.freedesktop.org/dist
+
+name=libpthread-stubs
+version=0.3
+release=1
+source=(http://xcb.freedesktop.org/dist/$name-$version.tar.bz2)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

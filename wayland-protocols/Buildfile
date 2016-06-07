@@ -1,0 +1,21 @@
+# Description: Wayland Protocols Library
+# URL: http://wayland.freedesktop.org
+
+name=wayland-protocols
+version=1.4
+release=1
+source=(http://wayland.freedesktop.org/releases/$name-$version.tar.xz)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

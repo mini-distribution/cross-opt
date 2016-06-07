@@ -1,0 +1,59 @@
+# Description: A reference wayland compositor
+# URL: http://wayland.freedesktop.org
+
+name=weston
+version=1.11.0
+release=1
+source=(http://wayland.freedesktop.org/releases/$name-$version.tar.xz)
+depends=(wayland pixman libxkbcommon libinput libpng libjpeg cairo linux-pam libunwind dbus wayland-protocols)
+
+build() {
+    cd $name-$version
+
+    ./configure --build=$BUILD \
+                --host=$HOST \
+                --prefix=/usr \
+                --disable-static \
+                --disable-egl \
+                --enable-xkbcommon \
+                --enable-setuid-install \
+                --disable-xwayland \
+                --disable-xwayland-test \
+                --disable-x11-compositor \
+                --disable-drm-compositor \
+                --disable-wayland-compositor \
+                --disable-headless-compositor \
+                --disable-rpi-compositor \
+                --disable-rdp-compositor \
+                --disable-colord \
+                --enable-fbdev-compositor \
+                --enable-screen-sharing \
+                --disable-vaapi-recorder \
+                --disable-simple-egl-clients \
+                --with-cairo=image \
+                --without-cairo-glesv2 \
+                --enable-resize-optimization \
+                --enable-weston-launch \
+                --enable-clients \
+                --enable-simple-clients \
+                --enable-fullscreen-shell \
+                --enable-dbus \
+                --enable-wcap-tools \
+                --enable-libunwind \
+                --enable-demo-clients-install \
+                WESTON_NATIVE_BACKEND="fbdev-backend.so"
+
+   make -j $JOBS WAYLAND_PROTOCOLS_DATADIR=$SYSROOT/usr/share/wayland-protocols
+   make DESTDIR=$PKG install
+
+   # Add weston runtime directory
+   install -d $PKG/etc/tmpfiles.d
+   echo 'd /run/weston  0700 root root' > $PKG/etc/tmpfiles.d/weston.conf
+
+   # Add weston runtime environment
+   install -d $PKG/etc/profile.d
+   echo 'export XDG_RUNTIME_DIR=/run/weston' > $PKG/etc/profile.d/weston
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

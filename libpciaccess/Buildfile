@@ -1,0 +1,21 @@
+# Description: Generic PCI access library
+# URL: http://xorg.freedesktop.org
+
+name=libpciaccess
+version=0.13.4
+release=1
+source=(http://xorg.freedesktop.org/releases/individual/lib/$name-$version.tar.bz2)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

@@ -1,0 +1,22 @@
+# Description: Library for handling evdev devices
+# URL: http://www.freedesktop.org/wiki/Software/libevdev
+
+name=libevdev
+version=1.5.1
+release=1
+source=(http://www.freedesktop.org/software/$name/$name-$version.tar.xz)
+
+build() {
+    cd $name-$version
+
+    ./configure --build=$BUILD \
+                --host=$HOST \
+                --prefix=/usr \
+                --disable-static
+
+    make -j $JOBS
+    make DESTDIR=$PKG install
+
+    # Fix libtool files
+    fix_la_files $PKG
+}
