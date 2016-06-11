@@ -3,7 +3,7 @@
 # License: BSD
 
 name=strace
-version=4.11
+version=4.12
 release=1
 source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.xz)
 
