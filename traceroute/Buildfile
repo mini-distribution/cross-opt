@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=traceroute
-version=2.0.21
+version=2.1.0
 release=1
 source=(http://downloads.sourceforge.net/project/$name/$name/$name-$version/$name-$version.tar.gz)
 
