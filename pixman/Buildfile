@@ -1,10 +1,10 @@
 # Description: Pixel manipulation library
-# URL: http://xorg.freedesktop.org
+# URL: http://www.pixman.org
 
 name=pixman
 version=0.34.0
 release=1
-source=(http://xorg.freedesktop.org/releases/individual/lib/$name-$version.tar.bz2)
+source=(https://www.cairographics.org/releases/$name-$version.tar.gz)
 
 build() {
    cd $name-$version
