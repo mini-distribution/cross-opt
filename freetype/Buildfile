@@ -3,7 +3,7 @@
 # License: FTL GPLv2
 
 name=freetype
-version=2.6.2
+version=2.6.3
 release=1
 source=(http://download.savannah.gnu.org/releases/$name/$name-$version.tar.bz2)
 depends=zlib
