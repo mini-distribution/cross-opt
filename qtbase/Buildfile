@@ -6,7 +6,7 @@ version=5.6.1
 release=1
 source=(http://download.qt-project.org/official_releases/qt/${version%.*}/$version/submodules/$name-opensource-src-$version.tar.xz
         qmake.conf qplatformdefs.h)
-depends=(zlib libpng libjpeg harfbuzz freetype glib libpcre sqlite icu
+depends=(zlib libpng libjpeg harfbuzz freetype glib pcre sqlite icu
          gst-plugins-good)
 
 build() {

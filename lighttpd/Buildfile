@@ -9,7 +9,7 @@ source=(http://download.$name.net/$name/releases-1.4.x/$name-$version.tar.xz \
         $name.conf
         $name.service
         root_user.patch)
-depends=(libpcre openssl bzip2)
+depends=(pcre openssl bzip2)
 
 build() {
    cd $name-$version
