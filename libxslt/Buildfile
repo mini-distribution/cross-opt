@@ -3,7 +3,7 @@
 # License: MIT
 
 name=libxslt
-version=1.1.28
+version=1.1.29
 release=1
 source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz
         cross_compilation.patch)
@@ -26,6 +26,7 @@ build() {
    make -j $JOBS
    make DESTDIR=$PKG install
 
+   # Cleanup
    rm -r $PKG/usr/share/doc
 
    # Fix libtool files
