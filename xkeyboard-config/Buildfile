@@ -14,12 +14,11 @@ build() {
                --host=$HOST \
                --prefix=/usr \
                --with-xkb-rules-symlink=xorg \
-               --disable-runtime-deps
+               --disable-runtime-deps \
+               --disable-nls
 
    make -j $JOBS
    make DESTDIR=$PKG install
-
-   rm -r $PKG/usr/share/locale
 }
 
 check() {
