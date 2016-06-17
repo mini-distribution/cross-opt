@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=v4l-utils
-version=1.8.1
+version=1.10.1
 release=1
 source=(http://linuxtv.org/downloads/$name/$name-$version.tar.bz2)
 depends=(libjpeg)
@@ -13,7 +13,8 @@ build() {
 
    ./configure --build=$BUILD \
                --host=$HOST \
-               --prefix=/usr
+               --prefix=/usr \
+               --disable-nls
 
    make -j $JOBS
    make DESTDIR=$PKG install
