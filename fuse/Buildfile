@@ -3,9 +3,9 @@
 # License: GPLv2
 
 name=fuse
-version=2.9.5
+version=2.9.6
 release=1
-source=(https://github.com/lib$name/lib$name/releases/download/fuse_2_9_5/$name-$version.tar.gz)
+source=(https://github.com/libfuse/libfuse/releases/download/$name-$version/$name-$version.tar.gz)
 
 build() {
    cd $name-$version
