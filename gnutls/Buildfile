@@ -3,9 +3,9 @@
 # License: GPLv3 LGPLv2
 
 name=gnutls
-version=3.4.11
+version=3.4.12
 release=1
-source=(ftp://ftp.gnutls.org/gcrypt/gnutls/v${version:0:3}/$name-$version.tar.xz)
+source=(http://mirrors.dotsrc.org/gcrypt/$name/v${version:0:3}/$name-$version.tar.xz)
 depends=(nettle)
 
 build() {
