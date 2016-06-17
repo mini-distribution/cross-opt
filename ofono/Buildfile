@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=ofono
-version=1.17
+version=1.18
 release=1
 source=(https://www.kernel.org/pub/linux/network/ofono/$name-$version.tar.xz)
 depends=(systemd glib dbus mobile-broadband-provider-info)
