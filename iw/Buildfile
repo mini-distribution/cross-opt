@@ -3,9 +3,9 @@
 # License: BSD
 
 name=iw
-version=4.3
+version=4.7
 release=1
-source=(https://www.kernel.org/pub/software/network/iw/$name-$version.tar.gz)
+source=(https://www.kernel.org/pub/software/network/iw/$name-$version.tar.xz)
 depends=(libnl)
 
 build () {
