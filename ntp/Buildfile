@@ -3,14 +3,15 @@
 # License: MIT BSD GPLv2
 
 name=ntp
-version=4.2.8p4
+version=4.2.8p8
 release=1
 source=(http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/$name-$version.tar.gz
         ntp.conf ntpd.service)
-depends=(openssl libcap)
+depends=(openssl libcap libevent)
 
 build () {
    cd $name-$version
+
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
@@ -20,14 +21,15 @@ build () {
                --enable-ntpdate-step \
                --enable-parse-clocks \
                --enable-all-clocks \
-               --with-yielding-select=yes
+               --with-yielding-select=yes \
+               --without-ntpsnmpd
+
    make -j $JOBS
    make DESTDIR=$PKG install
 
    install -Dm644 $SRC/ntp.conf $PKG/etc/ntp.conf
    install -Dm644 $SRC/ntpd.service $PKG/etc/systemd/system/ntpd.service
    
-   #Open port used by NTP
+   # Open port used by NTP
    echo "ntp 123/udp" >> $PKG/etc/services
-
 }
