@@ -3,7 +3,7 @@
 # License: LGPLv2 GPLv2
 
 name=lttng-tools
-version=2.7.1
+version=2.8.0
 release=1
 source=(http://lttng.org/files/lttng-tools/$name-$version.tar.bz2 \
         lttng-tools_disable-tests.patch)
@@ -24,6 +24,7 @@ build() {
    make -j $JOBS
    make DESTDIR=$PKG install
 
+   # Cleanup
    rm -r $PKG/usr/share/doc
 
    # Fix libtool files
