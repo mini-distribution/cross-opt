@@ -3,15 +3,23 @@
 # License: GPLv2
 
 name=dosfstools
-version=3.0.28
+version=4.0
 release=1
-source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.gz)
+source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.xz)
 
 build() {
    cd $name-$version
 
-   make CC=$HOST-gcc
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static
+
+   make -j $JOBS
    make DESTDIR=$PKG install
+
+   # Cleanup
+   rm -r $PKG/usr/share/doc
 
    # Fix libtool files
    fix_la_files $PKG
