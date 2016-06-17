@@ -1,0 +1,51 @@
+# Description: A 2D graphics library with support for multiple output targets
+# URL: http://www.cairographics.org
+# License: LGPLv2.1 MPL
+
+name=cairo
+version=1.14.6
+release=1
+source=(http://cairographics.org/releases/$name-$version.tar.xz)
+depends=(libpng pixman glib fontconfig freetype)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static \
+               --disable-xlib \
+               --disable-qt \
+               --disable-quartz \
+               --disable-win32 \
+               --disable-skia \
+               --disable-beos \
+               --disable-drm \
+               --disable-gallium \
+               --disable-gl \
+               --disable-glesv2 \
+               --disable-cogl \
+               --disable-directfb \
+               --disable-vg \
+               --disable-egl \
+               --disable-glx \
+               --disable-wgl \
+               --enable-ps \
+               --enable-pdf \
+               --enable-svg \
+               --disable-xml \
+               --without-x \
+               --enable-png \
+               --enable-ft \
+               --enable-fc \
+               --enable-tee
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -rf $PKG/usr/share
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
