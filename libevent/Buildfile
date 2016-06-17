@@ -1,0 +1,18 @@
+# Description: The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached.
+# URL: http://libevent.org/
+
+name=libevent
+version=2.0.22
+release=1
+source=(https://github.com/libevent/libevent/releases/download/release-$version-stable/$name-$version-stable.tar.gz)
+
+build() {
+   cd $name-$version-stable
+
+   ./configure --prefix=/usr  \
+               --host=$HOST   \
+               --build=$BUILD
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+}
