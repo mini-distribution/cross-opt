@@ -6,7 +6,7 @@ name=freetype
 version=2.6.5
 release=1
 source=(http://download.savannah.gnu.org/releases/$name/$name-$version.tar.bz2)
-depends=zlib
+depends=(zlib bzip2)
 
 build() {
    cd freetype-$version
