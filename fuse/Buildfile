@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=fuse
-version=2.9.6
+version=2.9.7
 release=1
 source=(https://github.com/libfuse/libfuse/releases/download/$name-$version/$name-$version.tar.gz)
 
