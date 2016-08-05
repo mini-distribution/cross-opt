@@ -3,7 +3,7 @@
 # License: LGPLv2.1
 
 name=mpg123
-version=1.23.4
+version=1.23.6
 release=1
 source=(http://www.mpg123.de/download/$name-$version.tar.bz2)
 
