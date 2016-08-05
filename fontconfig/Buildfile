@@ -3,7 +3,7 @@
 # License: MIT
 
 name=fontconfig
-version=2.12.0
+version=2.12.1
 release=1
 source=(http://fontconfig.org/release/$name-$version.tar.gz)
 depends=(freetype expat)
