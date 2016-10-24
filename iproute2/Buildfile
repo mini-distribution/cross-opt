@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=iproute2
-version=4.6.0
+version=4.8.0
 release=1
 source=(https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-$version.tar.xz)
 depends=(iptables native/linux-source)
@@ -16,7 +16,7 @@ build() {
    sed -i '/ARPD/d' Makefile
    sed -i 's/arpd.8//' man/man8/Makefile
 
-   make -j$JOBS CC=$HOST-gcc KERNEL_INCLUDE=$NATIVE_SYSROOT/usr/src/linux
+   make -j$JOBS HOSTCC=gcc CC=$HOST-gcc KERNEL_INCLUDE=$NATIVE_SYSROOT/usr/src/linux
    make DESTDIR=$PKG SBINDIR=/usr/sbin install
 
    # Clean up doc
