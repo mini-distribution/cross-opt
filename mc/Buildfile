@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=mc
-version=4.8.17
+version=4.8.18
 release=1
 source=(http://ftp.midnight-commander.org/mc-$version.tar.xz)
 depends=(ncurses glib)
