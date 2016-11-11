@@ -3,7 +3,7 @@
 # License: GPLv2.1
 
 name=libnetfilter_acct
-version=1.0.2
+version=1.0.3
 release=1
 source=(http://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
 depends=(libmnl)
