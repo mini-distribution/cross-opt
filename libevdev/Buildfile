@@ -2,7 +2,7 @@
 # URL: http://www.freedesktop.org/wiki/Software/libevdev
 
 name=libevdev
-version=1.5.2
+version=1.5.4
 release=1
 source=(http://www.freedesktop.org/software/$name/$name-$version.tar.xz)
 
