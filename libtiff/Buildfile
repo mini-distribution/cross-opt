@@ -5,7 +5,7 @@
 name=libtiff
 version=4.0.6
 release=1
-source=(ftp://ftp.remotesensing.org/pub/libtiff/tiff-$version.tar.gz)
+source=(http://download.osgeo.org/$name/tiff-$version.tar.gz)
 depends=(zlib libjpeg)
 
 build() {
