@@ -3,7 +3,7 @@
 # License: GPLv2
 
 name=bluez
-version=5.41
+version=5.44
 release=1
 source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)
 depends=(systemd glib dbus readline libusb libical)
@@ -19,6 +19,7 @@ build() {
                --enable-systemd \
                --disable-test \
                --disable-cups \
+               --enable-deprecated \
                --with-systemdsystemunitdir=/etc/systemd/system
 
    make -j $JOBS
