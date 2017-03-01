@@ -3,7 +3,7 @@
 # License: BSD
 
 name=tcpdump
-version=4.8.1
+version=4.9.0
 release=1
 source=(http://www.tcpdump.org/release/$name-$version.tar.gz)
 depends=(libpcap openssl)
