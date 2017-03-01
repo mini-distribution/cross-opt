@@ -3,7 +3,7 @@
 # License: Mesa MIT Khronos
 
 name=mesa
-version=11.2.2
+version=13.0.5
 release=1
 source=(ftp://ftp.freedesktop.org/pub/$name/$version/$name-$version.tar.gz)
 depends=(libdrm)
