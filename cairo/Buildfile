@@ -3,7 +3,7 @@
 # License: LGPLv2.1 MPL
 
 name=cairo
-version=1.14.6
+version=1.14.8
 release=1
 source=(http://cairographics.org/releases/$name-$version.tar.xz)
 depends=(libpng pixman glib fontconfig freetype)
