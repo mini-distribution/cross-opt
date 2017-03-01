@@ -2,7 +2,7 @@
 # URL: http://www.videolan.org/developers/x264.html
 # License: GNU GPL
 name=x264
-version=20160804-2245
+version=20170228-2245
 release=1
 source=(ftp://ftp.videolan.org/pub/videolan/$name/snapshots/$name-snapshot-$version-stable.tar.bz2)
 
