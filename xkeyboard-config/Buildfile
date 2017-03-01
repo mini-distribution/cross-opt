@@ -3,7 +3,7 @@
 # License: MIT
 
 name=xkeyboard-config
-version=2.18
+version=2.20
 release=1
 source=(http://xorg.freedesktop.org/archive/individual/data/$name/$name-$version.tar.bz2)
 
