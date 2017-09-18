@@ -5,7 +5,7 @@
 name=wpa_supplicant
 version=2.6
 release=1
-source=(http://hostap.epitest.fi/releases/$name-$version.tar.gz
+source=(https://w1.fi/releases/$name-$version.tar.gz
         wpa_supplicant.service
         wpa_supplicant.conf)
 depends=(openssl ncurses readline libnl dbus)
