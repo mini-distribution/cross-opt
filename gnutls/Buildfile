@@ -5,7 +5,7 @@
 name=gnutls
 version=3.5.9
 release=1
-source=(ftp://ftp.gnutls.org/gcrypt/gnutls/v${version:0:3}/$name-$version.tar.xz)
+source=(https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/$name-$version.tar.xz)
 depends=(nettle)
 
 build() {
