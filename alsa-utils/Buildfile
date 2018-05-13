@@ -26,6 +26,5 @@ build() {
    make -j $JOBS
    make DESTDIR=$PKG install
 
-   rm $PKG/usr/share/man/man7/alsactl_init.7
-   rmdir $PKG/usr/share/man/man7
+   rm -rf $PKG/usr/share/man/man7
 }
