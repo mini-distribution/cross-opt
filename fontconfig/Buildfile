@@ -3,10 +3,10 @@
 # License: MIT
 
 name=fontconfig
-version=2.12.1
+version=2.13.0
 release=1
 source=(http://fontconfig.org/release/$name-$version.tar.gz)
-depends=(freetype expat)
+depends=(freetype expat libuuid)
 
 build() {
    cd $name-$version
