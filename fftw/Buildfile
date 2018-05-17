@@ -2,7 +2,7 @@
 # URL: http://www.fftw.org/
 
 name=fftw
-version=3.3.6-pl1
+version=3.3.7
 release=1
 source=(http://www.fftw.org/$name-$version.tar.gz)
 
