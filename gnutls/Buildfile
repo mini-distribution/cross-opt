@@ -3,7 +3,7 @@
 # License: GPLv3 LGPLv2
 
 name=gnutls
-version=3.5.9
+version=3.5.18
 release=1
 source=(https://www.gnupg.org/ftp/gcrypt/gnutls/v3.5/$name-$version.tar.xz)
 depends=(nettle)
