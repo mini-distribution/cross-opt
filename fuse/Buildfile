@@ -3,22 +3,25 @@
 # License: GPLv2
 
 name=fuse
-version=2.9.7
+version=3.2.3
 release=1
-source=(https://github.com/libfuse/libfuse/releases/download/$name-$version/$name-$version.tar.gz)
+source=(https://github.com/libfuse/libfuse/releases/download/$name-$version/$name-$version.tar.xz)
+depends=(systemd)
 
 build() {
-   cd $name-$version
+    cd $name-$version
 
-   ./configure --host=$HOST \
-               --disable-static \
-               --prefix=/usr \
-               --enable-lib \
-               --enable-util \
-               --disable-example
+    meson build --prefix=/usr \
+                --libdir=/usr/lib \
+                --sysconfdir=/etc \
+                --localstatedir=/var \
+                --cross-file=$CFG/$HOST.meson
 
-   make -j $JOBS
-   make DESTDIR=$PKG install
+#    meson configure build -Dapparmor=false \
 
-   rm -rf $PKG/etc/
+    ninja -C build
+
+    DESTDIR=$PKG ninja -C build install
+
+    rm -rf $PKG/etc/
 }
