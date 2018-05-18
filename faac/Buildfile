@@ -1,0 +1,21 @@
+# Description: FAAC is an MPEG-4 and MPEG-2 AAC encoder.
+# URL: http://www.audiocoding.com/faac.html
+
+name=faac
+version=1.28
+release=1
+source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz
+        multi-define-strcasestr.patch)
+
+build() {
+   cd $name-$version
+
+   patch -p1 < $SRC/multi-define-strcasestr.patch
+
+   ./configure --prefix=/usr \
+               --host=$HOST \
+               --build=$BUILD
+
+   make -j$JOBS
+   make DESTDIR=$PKG install
+}
