@@ -1,0 +1,39 @@
+# Description: An open-source, cross-platform library for reading/writing/manipulating ID3 tags.
+# URL: http://id3lib.sourceforge.net/
+
+name=id3lib
+version=3.8.3
+release=2
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz
+	$name-3.8.3-zlib.patch
+	$name-3.8.3-test_io.patch
+	$name-3.8.3-autoconf259.patch
+	$name-3.8.3-unicode16.patch
+	$name-3.8.3-gcc-4.3.patch
+	CVE-2007-4460.diff)
+depends=(zlib)
+
+build() {
+   cd $name-$version
+
+   patch -p 1 -i $SRC/$name-3.8.3-zlib.patch
+   patch -p 1 -i $SRC/$name-3.8.3-test_io.patch
+   patch -p 1 -i $SRC/$name-3.8.3-autoconf259.patch
+   patch -p 1 -i $SRC/$name-3.8.3-unicode16.patch
+   patch -p 1 -i $SRC/$name-3.8.3-gcc-4.3.patch
+   patch -p 1 -i $SRC/CVE-2007-4460.diff
+   autoreconf -ivfs # buggy configure
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --disable-static \
+               --disable-assert \
+               --enable-debug=no
+
+   make -j  $JOBS
+   make DESTDIR=$PKG install
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

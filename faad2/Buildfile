@@ -1,0 +1,24 @@
+# Description: An HE, LC, MAIN and LTP profile MPEG2 and MPEG-4 AAC decoder
+# URL: http://www.audiocoding.com/
+
+name=faad2
+version=2.7
+release=1
+source=(http://download.sourceforge.net/faac/$name-$version.tar.bz2)
+depends=(libsndfile id3lib libmp4v2)
+
+build() {
+   cd $name-$version
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --enable-mp4v2
+
+   (cd libfaad && make -j $JOBS DESTDIR=$PKG install)
+   (cd common && make -j $JOBS DESTDIR=$PKG install)
+
+   install -m 0644 common/mp4ff/mp4ff_int_types.h $PKG/usr/include
+
+   # Fix libtool files
+   fix_la_files $PKG
+}

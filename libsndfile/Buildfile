@@ -1,0 +1,28 @@
+# Description: Library for manipulating sound files.
+# URL: http://www.mega-nerd.com/libsndfile
+
+name=libsndfile
+version=1.0.28
+release=1
+source=(http://www.mega-nerd.com/$name/files/$name-$version.tar.gz)
+depends=(flac
+         alsa-lib
+         libvorbis)
+
+build() {
+   cd $name-$version
+
+   ./configure \
+        --build=$BUILD \
+        --host=$HOST \
+        --prefix=/usr \
+        --disable-static
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share/doc
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
