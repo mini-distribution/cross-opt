@@ -3,9 +3,9 @@
 # License: LIBJPEG
 
 name=libjpeg
-version=9b
+version=9c
 release=1
-source=(http://mirror.mini-distribution.io/jpegsrc.v$version.tar.gz)
+source=(http://www.ijg.org/files/jpegsrc.v9c.tar.gz)
 
 build() {
 
