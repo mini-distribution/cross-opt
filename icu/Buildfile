@@ -1,0 +1,42 @@
+# Description: Widely used set of C/C++ libraries providing Unicode and Globalization support.
+# URL: http://www.icu-project.org/
+
+name=icu
+version=61.1
+release=1
+source=(http://download.icu-project.org/files/icu4c/$version/icu4c-${version//./_}-src.tgz
+        0001-Disable-LDFLAGSICUDT-for-Linux.patch)
+
+build() {
+  cd icu/source
+  patch -p1 -i $SRC/0001-Disable-LDFLAGSICUDT-for-Linux.patch
+  cd ../..
+
+  mkdir native && cd native
+
+  $SRC/icu/source/runConfigureICU Linux \
+        --prefix=/usr \
+        --disable-samples  \
+        --disable-tests \
+        --enable-rpath
+
+  make -j $JOBS
+
+  cd ..
+
+  mkdir cross && cd cross
+
+  $SRC/icu/source/configure \
+        --host=$HOST \
+        --prefix=/usr \
+        --with-cross-build=$SRC/native \
+        --enable-shared \
+        --disable-samples  \
+        --disable-tests  \
+        --enable-rpath
+
+  make -j $JOBS
+  make DESTDIR=$PKG install
+
+  rm $PKG/usr/share/icu/$version/LICENSE
+}
