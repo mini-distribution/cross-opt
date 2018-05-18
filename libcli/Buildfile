@@ -5,10 +5,13 @@
 name=libcli
 version=1.9.7
 release=1
-source=(https://github.com/dparrish/libcli/archive/v$version.tar.gz)
+source=(https://github.com/dparrish/libcli/archive/v$version.tar.gz
+       0001-Fix-build-failure-with-GCC-5.patch)
 
 build() {
    cd $name-$version
+
+   patch -p1 -i $SRC/0001-Fix-build-failure-with-GCC-5.patch
 
    make -j $JOBS CC=$HOST-gcc AR=$HOST-ar
    make DESTDIR=$PKG PREFIX=/usr install
