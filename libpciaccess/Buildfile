@@ -2,7 +2,7 @@
 # URL: http://xorg.freedesktop.org
 
 name=libpciaccess
-version=0.13.4
+version=0.14
 release=1
 source=(http://xorg.freedesktop.org/releases/individual/lib/$name-$version.tar.bz2)
 
