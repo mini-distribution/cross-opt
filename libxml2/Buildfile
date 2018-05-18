@@ -3,7 +3,7 @@
 # License: MIT
 
 name=libxml2
-version=2.9.4
+version=2.9.8
 release=1
 source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz)
 depends=zlib
