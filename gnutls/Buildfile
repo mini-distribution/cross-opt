@@ -21,8 +21,7 @@ build() {
                --without-idn \
                --disable-libdane \
                --without-p11-kit \
-               --enable-local-libopts \
-               --disable-hardware-acceleration
+               --enable-local-libopts
 
    make -j $JOBS
    make DESTDIR=$PKG install
