@@ -3,16 +3,13 @@
 # License: LGPLv2 GPLv2
 
 name=lttng-tools
-version=2.8.1
+version=2.10.4
 release=1
-source=(http://lttng.org/files/lttng-tools/$name-$version.tar.bz2 \
-        lttng-tools_disable-tests.patch)
+source=(http://lttng.org/files/lttng-tools/$name-$version.tar.bz2)
 depends=(popt libuuid liburcu lttng-ust libxml2)
 
 build() {
    cd $name-$version
-
-   patch -p1 -i $SRC/lttng-tools_disable-tests.patch
 
    autoreconf --install
    ./configure --build=$BUILD \
