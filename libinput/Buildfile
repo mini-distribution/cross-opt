@@ -23,3 +23,7 @@ build() {
     DESTDIR=$PKG \
     ninja -C build install
 }
+
+check() {
+   check_tool meson "Please install meson"
+}
