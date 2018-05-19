@@ -2,7 +2,7 @@
 # URL: http://wayland.freedesktop.org
 
 name=wayland
-version=1.11.0
+version=1.15.0
 release=1
 source=(http://wayland.freedesktop.org/releases/$name-$version.tar.xz)
 depends=(libffi expat libxml2 native/wayland)
