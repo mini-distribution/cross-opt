@@ -3,9 +3,10 @@
 # License: LGPL
 
 name=nmap
-version=7.40
+version=7.70
 release=1
 source=(https://nmap.org/dist/$name-$version.tar.bz2)
+depends=zlib
 
 build() {
    cd $name-$version
