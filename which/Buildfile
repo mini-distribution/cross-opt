@@ -1,0 +1,20 @@
+# Description: Show full path of commands
+# URL: https://carlowood.github.io/which
+
+name=which
+version=2.21
+release=1
+source=(ftp://ftp.gnu.org/gnu/which/$name-$version.tar.gz)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   rm -r $PKG/usr/share/info
+}
