@@ -2,7 +2,7 @@
 # URL: http://www.freedesktop.org/wiki/Software/libinput
 
 name=libinput
-version=1.3.2
+version=1.10.7
 release=1
 source=(http://www.freedesktop.org/software/$name/$name-$version.tar.xz)
 depends=(mtdev systemd libevdev)
@@ -10,18 +10,16 @@ depends=(mtdev systemd libevdev)
 build() {
     cd $name-$version
 
-    ./configure --build=$BUILD \
-                --host=$HOST \
-                --prefix=/usr \
-                --disable-static \
-                --disable-event-gui \
-                --disable-tests \
-                --disable-libwacom
+    meson build --prefix=/usr                 \
+                --libdir=/usr/lib             \
+                --cross-file=$CFG/$HOST.meson \
+                -Dlibwacom=false              \
+                -Ddebug-gui=false             \
+                -Ddocumentation=false         \
+                -Dtests=false
 
+    ninja -C build -j $JOBS
 
-    make -j $JOBS
-    make DESTDIR=$PKG install
-
-    # Fix libtool files
-    fix_la_files $PKG
+    DESTDIR=$PKG \
+    ninja -C build install
 }
