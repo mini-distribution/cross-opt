@@ -1,5 +1,5 @@
 # Description: lm_sensors package provides user-space support for the hardware monitoring drivers in the Linux kernel.
-# URL: http://www.lm-sensors.org/wiki/I2CTools
+# URL: https://hwmon.wiki.kernel.org/lm_sensors
 # License: GPLv2
 
 name=lm-sensors
