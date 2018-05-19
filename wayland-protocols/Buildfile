@@ -2,7 +2,7 @@
 # URL: http://wayland.freedesktop.org
 
 name=wayland-protocols
-version=1.4
+version=1.14
 release=1
 source=(http://wayland.freedesktop.org/releases/$name-$version.tar.xz)
 
