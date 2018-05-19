@@ -3,9 +3,9 @@
 # License: GPLv2
 
 name=valgrind
-version=3.12.0
+version=3.13.0
 release=1
-source=(http://valgrind.org/downloads/$name-$version.tar.bz2
+source=(ftp://sourceware.org/pub/valgrind/$name-$version.tar.bz2
         host-type-arm.patch
         valgrind-3.10.1-glibc_2.21-1.patch)
 
