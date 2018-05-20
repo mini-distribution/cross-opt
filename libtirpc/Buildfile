@@ -1,0 +1,28 @@
+# Description: Transport Independent RPC library (SunRPC replacement)
+# URL: http://libtirpc.sourceforge.net
+# License: BSD
+
+name=libtirpc
+version=1.0.3
+release=1
+source=(https://netix.dl.sourceforge.net/project/$name/$name/$version/$name-$version.tar.bz2
+        restore_using_reserve_ports_for_client_connections.patch)
+
+build() {
+    cd $name-$version
+
+    patch -p1 -i $SRC/restore_using_reserve_ports_for_client_connections.patch
+
+    ./configure --build=$BUILD \
+                --host=$HOST \
+                --prefix=/usr \
+                --sysconfdir=/etc \
+                --disable-static \
+                --disable-gssapi
+
+    make -j $JOBS
+    make DESTDIR=$PKG install
+
+    # Fix libtool files
+    fix_la_files $PKG
+}
