@@ -1,0 +1,44 @@
+# Description: Portmap replacement which supports RPC over various protocols
+# URL: http://rpcbind.sourceforge.net
+# License: Custom
+
+name=rpcbind
+version=0.2.4
+release=1
+source=(https://kent.dl.sourceforge.net/project/$name/$name/$version/$name-$version.tar.bz2
+        CVE-2017-8779.patch
+        rpcbind-sunrpc.patch
+        systemd_service.patch
+        sysusers.d
+        tmpfiles.d
+        rpcbind.conf)
+depends=(libtirpc systemd)
+
+build() {
+    cd $name-$version
+
+    patch -p1 -i $SRC/rpcbind-sunrpc.patch
+    patch -p1 -i $SRC/systemd_service.patch
+    patch -p1 -i $SRC/CVE-2017-8779.patch
+
+    ./configure --build=$BUILD \
+                --host=$HOST \
+                --prefix=/usr \
+                --disable-static \
+                --with-rpcuser=rpc \
+                --enable-warmstarts
+
+    make -j $JOBS
+    make DESTDIR=$PKG install
+
+    # Install configuration files
+    install -D -m644 $SRC/rpcbind.conf $PKG/etc/conf.d/rpcbind
+    install -Dm644 $SRC/tmpfiles.d $PKG/usr/lib/tmpfiles.d/rpcbind.conf
+    install -Dm644 $SRC/sysusers.d $PKG/usr/lib/sysusers.d/rpcbind.conf
+    
+    # Install missing man page - https://bugs.archlinux.org/task/21271
+    install -m644 man/rpcinfo.8 $PKG/usr/share/man/man8/
+
+    # Fix libtool files
+    fix_la_files $PKG
+}
