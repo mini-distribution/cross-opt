@@ -1,5 +1,5 @@
 [Unit]
-Description=A secure, fast, compliant and very flexible web-server
+Description=Lighttpd web-server
 After=syslog.target network.target
 
 [Service]

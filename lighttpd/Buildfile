@@ -5,34 +5,37 @@
 name=lighttpd
 version=1.4.49
 release=1
-source=(http://download.$name.net/$name/releases-1.4.x/$name-$version.tar.xz \
+source=(http://download.$name.net/$name/releases-1.4.x/$name-$version.tar.xz
+        lighttpd-allow-uid-0.patch
         $name.conf
         $name.service)
 depends=(pcre openssl bzip2)
 
 build() {
-   cd $name-$version
+    cd $name-$version
 
-   ./configure --build=$BUILD \
-               --host=$HOST \
-               --prefix=/usr \
-               --libdir=/usr/lib/$name \
-               --with-openssl \
-               --with-pcre
+    patch -p1 -i $SRC/lighttpd-allow-uid-0.patch
 
-   make -j $JOBS PCRE_LIB='-lpcre'
-   make DESTDIR=$PKG install
+    ./configure --build=$BUILD \
+                --host=$HOST \
+                --prefix=/usr \
+                --libdir=/usr/lib/$name \
+                --with-openssl \
+                --with-pcre
 
-   install -D -m 644 $SRC/$name.conf $PKG/etc/$name/$name.conf
-   install -d $PKG/var/www/{htdocs,logs}
-   install -d $PKG/var/run
-   install -d $PKG/etc/ssl/certs
-   install -D -m 644 $SRC/$name.service $PKG/etc/systemd/system/$name.service
-   touch $PKG/var/run/lighttpd.pid
-   touch $PKG/etc/ssl/certs/lighttpd.pem
-   chmod 0600 $PKG/etc/ssl/certs/lighttpd.pem
+    make -j $JOBS PCRE_LIB='-lpcre'
+    make DESTDIR=$PKG install
 
-   # Fix libtool files
-   fix_la_files $PKG
+    install -D -m 644 $SRC/$name.conf $PKG/etc/$name/$name.conf
+    install -d $PKG/var/www/{htdocs,logs}
+    install -d $PKG/var/run
+    install -d $PKG/etc/ssl/certs
+    install -D -m 644 $SRC/$name.service $PKG/etc/systemd/system/$name.service
+    touch $PKG/var/run/lighttpd.pid
+    touch $PKG/etc/ssl/certs/lighttpd.pem
+    chmod 0600 $PKG/etc/ssl/certs/lighttpd.pem
+
+    # Fix libtool files
+    fix_la_files $PKG
 }
 

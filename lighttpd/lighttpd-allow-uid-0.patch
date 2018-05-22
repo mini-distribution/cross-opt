@@ -1,0 +1,36 @@
+diff -Nur a/src/server.c b/src/server.c
+--- a/src/server.c	2018-03-12 01:52:20.000000000 +0100
++++ b/src/server.c	2018-05-22 22:03:22.706522815 +0200
+@@ -1260,20 +1260,20 @@
+ 						"can't find username", srv->srvconf.username);
+ 				return -1;
+ 			}
+-
++/*
+ 			if (pwd->pw_uid == 0) {
+ 				log_error_write(srv, __FILE__, __LINE__, "s",
+ 						"I will not set uid to 0\n");
+ 				return -1;
+ 			}
+-
++*/
+ 			if (NULL == grp && NULL == (grp = getgrgid(pwd->pw_gid))) {
+ 				log_error_write(srv, __FILE__, __LINE__, "sd",
+ 					"can't find group id", pwd->pw_gid);
+ 				return -1;
+ 			}
+ 		}
+-
++/*
+ 		if (NULL != grp) {
+ 			if (grp->gr_gid == 0) {
+ 				log_error_write(srv, __FILE__, __LINE__, "s",
+@@ -1281,7 +1281,7 @@
+ 				return -1;
+ 			}
+ 		}
+-
++*/
+ 		/* 
+ 		 * Change group before chroot, when we have access
+ 		 * to /etc/group
