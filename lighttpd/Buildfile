@@ -30,6 +30,7 @@ build() {
     install -d $PKG/var/www/{htdocs,logs}
     install -d $PKG/var/run
     install -d $PKG/etc/ssl/certs
+    install -d $PKG/etc/lighttpd/conf.d
     install -D -m 644 $SRC/$name.service $PKG/etc/systemd/system/$name.service
     touch $PKG/var/run/lighttpd.pid
     touch $PKG/etc/ssl/certs/lighttpd.pem
