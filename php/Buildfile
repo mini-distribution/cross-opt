@@ -1,0 +1,30 @@
+# Description: Server-side scripting language
+# URL: http://www.php.net
+# License: PHP Zend
+
+name=php
+version=7.2.5
+release=1
+source=(http://at2.php.net/distributions/$name-$version.tar.bz2
+        fastcgi-php.conf)
+depends=(zlib lighttpd)
+
+build() {
+    cd $name-$version
+
+    ./configure --build=$BUILD \
+                --host=$HOST \
+                --prefix=/usr \
+                --with-config-file-path=/etc \
+                --disable-static \
+                --disable-all \
+                --disable-phpdbg \
+                --with-valgrind=no \
+                --enable-cgi
+
+    make -j $JOBS
+    make INSTALL_ROOT=$PKG install
+
+    # Install lighttpd fast-cgi php configuration    
+    install -D -m 644 $SRC/fastcgi-php.conf $PKG/etc/lighttpd/conf.d/fastcgi-php.conf
+}
