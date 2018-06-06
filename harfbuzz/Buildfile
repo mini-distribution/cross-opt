@@ -2,7 +2,7 @@
 # URL: http://www.freedesktop.org/wiki/Software/HarfBuzz
 
 name=harfbuzz
-version=1.7.6
+version=1.7.7
 release=1
 source=(http://www.freedesktop.org/software/$name/release/$name-$version.tar.bz2)
 depends=(freetype glib icu)
