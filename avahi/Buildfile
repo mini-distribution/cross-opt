@@ -1,0 +1,47 @@
+# Description: Avahi is a system which facilitates service discovery on a local network via the mDNS/DNS-SD protocol suite. 
+# URL: http://www.avahi.org
+
+name=avahi
+version=0.7
+release=1
+source=(https://github.com/lathiat/$name/releases/download/v$version/$name-$version.tar.gz)
+depends=(glib libdaemon dbus)
+
+build() {
+   cd $name-$version
+
+   ./configure --build=$BUILD \
+               --host=$HOST \
+               --prefix=/usr \
+               --with-distro=none \
+               --disable-qt3 \
+               --disable-qt4 \
+               --disable-gtk \
+               --disable-gtk3 \
+               --disable-gdbm \
+               --disable-python \
+               --enable-libdaemon \
+               --disable-mono \
+               --with-avahi-user=root \
+               --with-avahi-group=root \
+               --with-avahi-priv-access-group=root \
+               --with-autoipd-user=root \
+               --with-autoipd-group=root \
+               --enable-dbus \
+               --with-systemdsystemunitdir=/etc/systemd/system \
+               --with-dbus-sys=/etc/dbus-1/system.d \
+               --disable-nls
+
+
+   make -j $JOBS
+   make DESTDIR=$PKG install
+
+   echo "mdns    5353/tcp" >> $PKG/etc/services
+   echo "mdns    5353/udp" >> $PKG/etc/services
+
+   # Cleanup
+   rm -r $PKG/usr/share/locale
+
+   # Fix libtool files
+   fix_la_files $PKG
+}
