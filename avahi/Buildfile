@@ -13,6 +13,7 @@ build() {
    ./configure --build=$BUILD \
                --host=$HOST \
                --prefix=/usr \
+               --sysconfdir=/etc \
                --with-distro=none \
                --disable-qt3 \
                --disable-qt4 \
@@ -30,7 +31,8 @@ build() {
                --enable-dbus \
                --with-systemdsystemunitdir=/etc/systemd/system \
                --with-dbus-sys=/etc/dbus-1/system.d \
-               --disable-nls
+               --disable-nls \
+               --disable-static
 
 
    make -j $JOBS
