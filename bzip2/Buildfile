@@ -5,7 +5,7 @@
 name=bzip2
 version=1.0.6
 release=1
-source=(http://www.bzip.org/$version/$name-$version.tar.gz
+source=(https://netcologne.dl.sourceforge.net/project/$name/$name-$version.tar.gz
         $name.patch $name-disable-test.patch)
 
 build() {
